@@ -202,7 +202,29 @@ class: center, middle
 # Critical CSS
 
 * Important to show something fast
-* Can utilize code splitting for this
+* Render the "above the fold" content
+* Can utilize code splitting
+
+---
+
+# Critical CSS
+
+<img src="images/above-the-fold.png" style="width: 100%;" />
+
+---
+
+# Timeline
+
+![](http://d.pr/i/zYks+)
+
+---
+
+#  Code Splitting
+
+* Create "chunks"
+* Load async like w/ require.js
+* Uses `require.ensure`
+
 
 ---
 
@@ -261,12 +283,6 @@ export default class Logger {
 ```
 
 * Will export as `module.exports = Logger;`
-
----
-
-class: center, middle
-
-# Code Splitting
 
 ---
 

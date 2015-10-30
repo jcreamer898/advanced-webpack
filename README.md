@@ -1,3 +1,3 @@
-# js-architecture-23rd-century
+# Advanced WebPack
 
-Slides and demo from Code on the Beach 2015
+Slides and demo for Advanced WebPack
