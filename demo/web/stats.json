@@ -1,0 +1,694 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "1.10.1",
+  "hash": "7bdcc833a9e6d5b6aae2",
+  "time": 765,
+  "publicPath": "",
+  "assetsByChunkName": {
+    "app": "app.js",
+    "captainsLog": "captainsLog.js",
+    "common": "common.js",
+    "starfleet": "starfleet.js"
+  },
+  "assets": [
+    {
+      "name": "app.js",
+      "size": 7731,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "app"
+      ],
+      "emitted": true
+    },
+    {
+      "name": "captainsLog.js",
+      "size": 478,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "captainsLog"
+      ],
+      "emitted": true
+    },
+    {
+      "name": "common.js",
+      "size": 4012,
+      "chunks": [
+        2
+      ],
+      "chunkNames": [
+        "common"
+      ],
+      "emitted": true
+    },
+    {
+      "name": "starfleet.js",
+      "size": 193,
+      "chunks": [
+        3
+      ],
+      "chunkNames": [
+        "starfleet"
+      ],
+      "emitted": true
+    }
+  ],
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": false,
+      "extraAsync": false,
+      "size": 7335,
+      "names": [
+        "app"
+      ],
+      "files": [
+        "app.js"
+      ],
+      "hash": "03af6f5da46c3279d9c9",
+      "parents": [
+        2
+      ],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+          "name": "./js/index.js",
+          "size": 753,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": null,
+          "profile": {
+            "factory": 20,
+            "building": 485
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "source": "\"use strict\";\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { \"default\": obj }; }\n\nvar _utilsLogger = require(\"./utils/logger\");\n\nvar _shipsGalaxy_class = require(\"./ships/galaxy_class\");\n\nvar _shipsGalaxy_class2 = _interopRequireDefault(_shipsGalaxy_class);\n\nvar _weaponsTorpedo_launcher = require(\"./weapons/torpedo_launcher\");\n\nvar _weaponsTorpedo_launcher2 = _interopRequireDefault(_weaponsTorpedo_launcher);\n\nvar enterprise = new _shipsGalaxy_class2[\"default\"]({\n  captain: \"Jean Luc Picard\",\n  firstOfficer: \"William Riker\",\n  weaponSystems: { torpedos: new _weaponsTorpedo_launcher2[\"default\"]() }\n});\n\nenterprise.fire(\"torpedos\");\n\n(0, _utilsLogger.log)(\"Torpedoes fired, prepare for warp...\");\n\nenterprise.warp();"
+        },
+        {
+          "id": 2,
+          "identifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/ships/galaxy_class.js",
+          "name": "./js/ships/galaxy_class.js",
+          "size": 2774,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+          "profile": {
+            "factory": 62,
+            "building": 81
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+              "module": "./js/index.js",
+              "moduleName": "./js/index.js",
+              "type": "cjs require",
+              "userRequest": "./ships/galaxy_class",
+              "loc": "7:25-56"
+            }
+          ],
+          "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();\n\nvar _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if (\"value\" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { \"default\": obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }\n\nvar _starship = require(\"./starship\");\n\nvar _starship2 = _interopRequireDefault(_starship);\n\nvar GalaxyClass = (function (_StarShip) {\n  _inherits(GalaxyClass, _StarShip);\n\n  function GalaxyClass() {\n    _classCallCheck(this, GalaxyClass);\n\n    _get(Object.getPrototypeOf(GalaxyClass.prototype), \"constructor\", this).apply(this, arguments);\n  }\n\n  _createClass(GalaxyClass, [{\n    key: \"deflectorShields\",\n    value: function deflectorShields() {\n      // ...\n    }\n  }, {\n    key: \"warp\",\n    value: function warp(speed) {\n      if (!speed) {\n        _get(Object.getPrototypeOf(GalaxyClass.prototype), \"warp\", this).call(this, 9.8);\n      }\n    }\n  }]);\n\n  return GalaxyClass;\n})(_starship2[\"default\"]);\n\nexports[\"default\"] = GalaxyClass;\nmodule.exports = exports[\"default\"];"
+        },
+        {
+          "id": 3,
+          "identifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/ships/starship.js",
+          "name": "./js/ships/starship.js",
+          "size": 2562,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/ships/galaxy_class.js",
+          "profile": {
+            "factory": 41,
+            "building": 42
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 2,
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/ships/galaxy_class.js",
+              "module": "./js/ships/galaxy_class.js",
+              "moduleName": "./js/ships/galaxy_class.js",
+              "type": "cjs require",
+              "userRequest": "./starship",
+              "loc": "17:16-37"
+            }
+          ],
+          "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar StarShip = (function () {\n  function StarShip(_ref) {\n    var captain = _ref.captain;\n    var firstOfficer = _ref.firstOfficer;\n    var _ref$weaponSystems = _ref.weaponSystems;\n    var weaponSystems = _ref$weaponSystems === undefined ? {} : _ref$weaponSystems;\n    var _ref$maxWarp = _ref.maxWarp;\n    var maxWarp = _ref$maxWarp === undefined ? 5 : _ref$maxWarp;\n\n    _classCallCheck(this, StarShip);\n\n    this.captain = captain;\n    this.firstOfficer = firstOfficer;\n    this.weaponSystems = weaponSystems;\n    this.maxWarp = maxWarp;\n  }\n\n  _createClass(StarShip, [{\n    key: \"fire\",\n    value: function fire(system) {\n      this.weaponSystems[system].fire();\n    }\n  }, {\n    key: \"fireAll\",\n    value: function fireAll() {\n      var _iteratorNormalCompletion = true;\n      var _didIteratorError = false;\n      var _iteratorError = undefined;\n\n      try {\n        for (var _iterator = this.weaponSystems[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n          var system = _step.value;\n\n          this.weaponSystems[system].fire();\n        }\n      } catch (err) {\n        _didIteratorError = true;\n        _iteratorError = err;\n      } finally {\n        try {\n          if (!_iteratorNormalCompletion && _iterator[\"return\"]) {\n            _iterator[\"return\"]();\n          }\n        } finally {\n          if (_didIteratorError) {\n            throw _iteratorError;\n          }\n        }\n      }\n    }\n  }, {\n    key: \"warp\",\n    value: function warp(speed) {\n      if (speed > this.maxWarp) {\n        throw \"I can't do it captain, I don't have the power!\";\n      }\n    }\n  }]);\n\n  return StarShip;\n})();\n\nexports[\"default\"] = StarShip;\nmodule.exports = exports[\"default\"];"
+        },
+        {
+          "id": 4,
+          "identifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/weapons/torpedo_launcher.js",
+          "name": "./js/weapons/torpedo_launcher.js",
+          "size": 1246,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+          "profile": {
+            "factory": 62,
+            "building": 111
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+              "module": "./js/index.js",
+              "moduleName": "./js/index.js",
+              "type": "cjs require",
+              "userRequest": "./weapons/torpedo_launcher",
+              "loc": "11:31-68"
+            }
+          ],
+          "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar TorpedoLauncher = (function () {\n  function TorpedoLauncher() {\n    _classCallCheck(this, TorpedoLauncher);\n\n    this.shotsRemaining = 10;\n  }\n\n  _createClass(TorpedoLauncher, [{\n    key: \"fire\",\n    value: function fire() {\n      this.shotsRemaining -= 1;\n\n      console.log(this.shotsRemaining + \" torpedos left\");\n    }\n  }]);\n\n  return TorpedoLauncher;\n})();\n\nexports[\"default\"] = TorpedoLauncher;\nmodule.exports = exports[\"default\"];"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+          "moduleName": "./js/index.js",
+          "loc": "",
+          "name": "app",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "rendered": true,
+      "initial": true,
+      "entry": false,
+      "extraAsync": false,
+      "size": 370,
+      "names": [
+        "captainsLog"
+      ],
+      "files": [
+        "captainsLog.js"
+      ],
+      "hash": "5e86be23f8d32ae8c84d",
+      "parents": [
+        2
+      ],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/captainsLog/index.js",
+          "name": "./js/captainsLog/index.js",
+          "size": 370,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "assets": [],
+          "issuer": null,
+          "profile": {
+            "factory": 425,
+            "building": 121,
+            "dependencies": 18
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "source": "\"use strict\";\n\nvar _utilsLogger = require(\"../utils/logger\");\n\nvar captainsLog = (function () {\n  var messages = [];\n\n  return {\n    add: function add(msg) {\n      if (msg) {\n        var message = date + \": \" + msg,\n            date = new Date();\n\n        messages.push(message);\n\n        (0, _utilsLogger.log)(message);\n\n        return message;\n      }\n    }\n  };\n})();"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/captainsLog/index.js",
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/captainsLog/index.js",
+          "moduleName": "./js/captainsLog/index.js",
+          "loc": "",
+          "name": "captainsLog",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 227,
+      "names": [
+        "common"
+      ],
+      "files": [
+        "common.js"
+      ],
+      "hash": "13e0ba5984b1370a872d",
+      "parents": [],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "multi common",
+          "name": "multi common",
+          "size": 16,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            2
+          ],
+          "assets": [],
+          "issuer": null,
+          "profile": {
+            "factory": 1,
+            "building": 0
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": []
+        },
+        {
+          "id": 1,
+          "identifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/utils/logger.js",
+          "name": "./js/utils/logger.js",
+          "size": 211,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            2
+          ],
+          "assets": [],
+          "issuer": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+          "profile": {
+            "factory": 62,
+            "building": 120
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+              "module": "./js/index.js",
+              "moduleName": "./js/index.js",
+              "type": "cjs require",
+              "userRequest": "./utils/logger",
+              "loc": "5:19-44"
+            },
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/starfleet/index.js",
+              "module": "./js/starfleet/index.js",
+              "moduleName": "./js/starfleet/index.js",
+              "type": "cjs require",
+              "userRequest": "../utils/logger",
+              "loc": "3:19-45"
+            },
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/captainsLog/index.js",
+              "module": "./js/captainsLog/index.js",
+              "moduleName": "./js/captainsLog/index.js",
+              "type": "cjs require",
+              "userRequest": "../utils/logger",
+              "loc": "3:19-45"
+            }
+          ],
+          "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.alert = alert;\nexports.log = log;\n\nfunction alert(msg) {\n  console.error(msg);\n}\n\nfunction log(msg) {\n  console.log(msg);\n}"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "multi common",
+          "moduleIdentifier": "multi common",
+          "moduleName": "multi common",
+          "loc": "",
+          "name": "common",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "rendered": true,
+      "initial": true,
+      "entry": false,
+      "extraAsync": false,
+      "size": 98,
+      "names": [
+        "starfleet"
+      ],
+      "files": [
+        "starfleet.js"
+      ],
+      "hash": "9584ca3a54f2a1d0d8d5",
+      "parents": [
+        2
+      ],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/starfleet/index.js",
+          "name": "./js/starfleet/index.js",
+          "size": 98,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            3
+          ],
+          "assets": [],
+          "issuer": null,
+          "profile": {
+            "factory": 425,
+            "building": 88,
+            "dependencies": 52
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "source": "\"use strict\";\n\nvar _utilsLogger = require(\"../utils/logger\");\n\n(0, _utilsLogger.log)(\"Starfleet\");"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/starfleet/index.js",
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/starfleet/index.js",
+          "moduleName": "./js/starfleet/index.js",
+          "loc": "",
+          "name": "starfleet",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+      "name": "./js/index.js",
+      "size": 753,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": null,
+      "profile": {
+        "factory": 20,
+        "building": 485
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "source": "\"use strict\";\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { \"default\": obj }; }\n\nvar _utilsLogger = require(\"./utils/logger\");\n\nvar _shipsGalaxy_class = require(\"./ships/galaxy_class\");\n\nvar _shipsGalaxy_class2 = _interopRequireDefault(_shipsGalaxy_class);\n\nvar _weaponsTorpedo_launcher = require(\"./weapons/torpedo_launcher\");\n\nvar _weaponsTorpedo_launcher2 = _interopRequireDefault(_weaponsTorpedo_launcher);\n\nvar enterprise = new _shipsGalaxy_class2[\"default\"]({\n  captain: \"Jean Luc Picard\",\n  firstOfficer: \"William Riker\",\n  weaponSystems: { torpedos: new _weaponsTorpedo_launcher2[\"default\"]() }\n});\n\nenterprise.fire(\"torpedos\");\n\n(0, _utilsLogger.log)(\"Torpedoes fired, prepare for warp...\");\n\nenterprise.warp();"
+    },
+    {
+      "id": 0,
+      "identifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/captainsLog/index.js",
+      "name": "./js/captainsLog/index.js",
+      "size": 370,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "assets": [],
+      "issuer": null,
+      "profile": {
+        "factory": 425,
+        "building": 121,
+        "dependencies": 18
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "source": "\"use strict\";\n\nvar _utilsLogger = require(\"../utils/logger\");\n\nvar captainsLog = (function () {\n  var messages = [];\n\n  return {\n    add: function add(msg) {\n      if (msg) {\n        var message = date + \": \" + msg,\n            date = new Date();\n\n        messages.push(message);\n\n        (0, _utilsLogger.log)(message);\n\n        return message;\n      }\n    }\n  };\n})();"
+    },
+    {
+      "id": 0,
+      "identifier": "multi common",
+      "name": "multi common",
+      "size": 16,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        2
+      ],
+      "assets": [],
+      "issuer": null,
+      "profile": {
+        "factory": 1,
+        "building": 0
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": []
+    },
+    {
+      "id": 0,
+      "identifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/starfleet/index.js",
+      "name": "./js/starfleet/index.js",
+      "size": 98,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        3
+      ],
+      "assets": [],
+      "issuer": null,
+      "profile": {
+        "factory": 425,
+        "building": 88,
+        "dependencies": 52
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "source": "\"use strict\";\n\nvar _utilsLogger = require(\"../utils/logger\");\n\n(0, _utilsLogger.log)(\"Starfleet\");"
+    },
+    {
+      "id": 1,
+      "identifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/utils/logger.js",
+      "name": "./js/utils/logger.js",
+      "size": 211,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        2
+      ],
+      "assets": [],
+      "issuer": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+      "profile": {
+        "factory": 62,
+        "building": 120
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+          "module": "./js/index.js",
+          "moduleName": "./js/index.js",
+          "type": "cjs require",
+          "userRequest": "./utils/logger",
+          "loc": "5:19-44"
+        },
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/starfleet/index.js",
+          "module": "./js/starfleet/index.js",
+          "moduleName": "./js/starfleet/index.js",
+          "type": "cjs require",
+          "userRequest": "../utils/logger",
+          "loc": "3:19-45"
+        },
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/captainsLog/index.js",
+          "module": "./js/captainsLog/index.js",
+          "moduleName": "./js/captainsLog/index.js",
+          "type": "cjs require",
+          "userRequest": "../utils/logger",
+          "loc": "3:19-45"
+        }
+      ],
+      "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.alert = alert;\nexports.log = log;\n\nfunction alert(msg) {\n  console.error(msg);\n}\n\nfunction log(msg) {\n  console.log(msg);\n}"
+    },
+    {
+      "id": 2,
+      "identifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/ships/galaxy_class.js",
+      "name": "./js/ships/galaxy_class.js",
+      "size": 2774,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+      "profile": {
+        "factory": 62,
+        "building": 81
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+          "module": "./js/index.js",
+          "moduleName": "./js/index.js",
+          "type": "cjs require",
+          "userRequest": "./ships/galaxy_class",
+          "loc": "7:25-56"
+        }
+      ],
+      "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();\n\nvar _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if (\"value\" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { \"default\": obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }\n\nvar _starship = require(\"./starship\");\n\nvar _starship2 = _interopRequireDefault(_starship);\n\nvar GalaxyClass = (function (_StarShip) {\n  _inherits(GalaxyClass, _StarShip);\n\n  function GalaxyClass() {\n    _classCallCheck(this, GalaxyClass);\n\n    _get(Object.getPrototypeOf(GalaxyClass.prototype), \"constructor\", this).apply(this, arguments);\n  }\n\n  _createClass(GalaxyClass, [{\n    key: \"deflectorShields\",\n    value: function deflectorShields() {\n      // ...\n    }\n  }, {\n    key: \"warp\",\n    value: function warp(speed) {\n      if (!speed) {\n        _get(Object.getPrototypeOf(GalaxyClass.prototype), \"warp\", this).call(this, 9.8);\n      }\n    }\n  }]);\n\n  return GalaxyClass;\n})(_starship2[\"default\"]);\n\nexports[\"default\"] = GalaxyClass;\nmodule.exports = exports[\"default\"];"
+    },
+    {
+      "id": 3,
+      "identifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/ships/starship.js",
+      "name": "./js/ships/starship.js",
+      "size": 2562,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/ships/galaxy_class.js",
+      "profile": {
+        "factory": 41,
+        "building": 42
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 2,
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/ships/galaxy_class.js",
+          "module": "./js/ships/galaxy_class.js",
+          "moduleName": "./js/ships/galaxy_class.js",
+          "type": "cjs require",
+          "userRequest": "./starship",
+          "loc": "17:16-37"
+        }
+      ],
+      "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar StarShip = (function () {\n  function StarShip(_ref) {\n    var captain = _ref.captain;\n    var firstOfficer = _ref.firstOfficer;\n    var _ref$weaponSystems = _ref.weaponSystems;\n    var weaponSystems = _ref$weaponSystems === undefined ? {} : _ref$weaponSystems;\n    var _ref$maxWarp = _ref.maxWarp;\n    var maxWarp = _ref$maxWarp === undefined ? 5 : _ref$maxWarp;\n\n    _classCallCheck(this, StarShip);\n\n    this.captain = captain;\n    this.firstOfficer = firstOfficer;\n    this.weaponSystems = weaponSystems;\n    this.maxWarp = maxWarp;\n  }\n\n  _createClass(StarShip, [{\n    key: \"fire\",\n    value: function fire(system) {\n      this.weaponSystems[system].fire();\n    }\n  }, {\n    key: \"fireAll\",\n    value: function fireAll() {\n      var _iteratorNormalCompletion = true;\n      var _didIteratorError = false;\n      var _iteratorError = undefined;\n\n      try {\n        for (var _iterator = this.weaponSystems[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n          var system = _step.value;\n\n          this.weaponSystems[system].fire();\n        }\n      } catch (err) {\n        _didIteratorError = true;\n        _iteratorError = err;\n      } finally {\n        try {\n          if (!_iteratorNormalCompletion && _iterator[\"return\"]) {\n            _iterator[\"return\"]();\n          }\n        } finally {\n          if (_didIteratorError) {\n            throw _iteratorError;\n          }\n        }\n      }\n    }\n  }, {\n    key: \"warp\",\n    value: function warp(speed) {\n      if (speed > this.maxWarp) {\n        throw \"I can't do it captain, I don't have the power!\";\n      }\n    }\n  }]);\n\n  return StarShip;\n})();\n\nexports[\"default\"] = StarShip;\nmodule.exports = exports[\"default\"];"
+    },
+    {
+      "id": 4,
+      "identifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/weapons/torpedo_launcher.js",
+      "name": "./js/weapons/torpedo_launcher.js",
+      "size": 1246,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+      "profile": {
+        "factory": 62,
+        "building": 111
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/node_modules/babel-loader/index.js!/Users/jonathanc/Projects/jcreamer898/js-architecture-23rd-century/demo/js/index.js",
+          "module": "./js/index.js",
+          "moduleName": "./js/index.js",
+          "type": "cjs require",
+          "userRequest": "./weapons/torpedo_launcher",
+          "loc": "11:31-68"
+        }
+      ],
+      "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar TorpedoLauncher = (function () {\n  function TorpedoLauncher() {\n    _classCallCheck(this, TorpedoLauncher);\n\n    this.shotsRemaining = 10;\n  }\n\n  _createClass(TorpedoLauncher, [{\n    key: \"fire\",\n    value: function fire() {\n      this.shotsRemaining -= 1;\n\n      console.log(this.shotsRemaining + \" torpedos left\");\n    }\n  }]);\n\n  return TorpedoLauncher;\n})();\n\nexports[\"default\"] = TorpedoLauncher;\nmodule.exports = exports[\"default\"];"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}
