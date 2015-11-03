@@ -134,8 +134,9 @@ class: left
 
 # Load only the JavaScript/CSS needed
 
-> "When you have eliminated the impossible, whatever remains, however improbable, must be the truth." Spock
-
+* Each page needs it's own assets
+* How to separate?
+* What about common code? jQuery?
 * It is possible with WebPack
 
 ---
@@ -144,13 +145,18 @@ class: left
 
 ```js
 entry: {
-  "app": "./js/index",
-  "starfleet": "./js/about/index",
-  "captainsLog": "./js/captains_log/index"
+  common: ["jquery"],
+  continents: "./javascripts/continents.js",
+  countries: "./javascripts/countries.js",
+  cities: "./javascripts/cities.js",
+  polyfill: ["babel/polyfill"]
 },
 output: {
-  path: "./dist",
-  filename: "[name].js"
+  path: path.join(__dirname, "public", "javascripts"),
+  filename: "[name].js",
+  chunkFilename: "[name]_[chunkhash:20].js",
+  publicPath: "/javascripts/",
+  libraryTarget: "var"
 },
 ```
 
@@ -179,7 +185,7 @@ output: {
 
 ```js
 entry: {
-  common: [],
+  common: ["jquery"],
   /* ... */
 },
 plugins: [new webpack.optimize.CommonsChunkPlugin({
@@ -189,13 +195,91 @@ plugins: [new webpack.optimize.CommonsChunkPlugin({
 ```
 
 * Create a "common" bundle
+* 2 or more times
 * Can default with jQuery, etc
 * Will extract common modules
 
 ---
 class: center, middle
 
-# Critical CSS
+# CSS
+
+---
+
+# CSS Loaders
+
+```js
+module: {
+  loaders: [{
+    test: /\.scss$/,
+    loader: "style!css!sass"
+  }]
+}
+```
+
+* Uses `node-sass`
+* `sass-loader` compiles
+* `css-loader` sends compiled CSS to...
+* `style-loader` **inlines** CSS
+
+???
+
+node-sass is a c++ version of sass which is very fast
+
+---
+
+# css-loader
+
+<img src="images/instagram.png" style="width: 100%" />
+
+---
+
+# css-loader
+
+* Inline css is fast
+* Not always ideal
+* Flash of unstyled content issues
+
+???
+
+In a web app, you can deal with css Easy
+
+---
+
+# ExtractTextPlugin
+
+```shell
+npm install extract-text-webpack-plugin --save-dev
+```
+
+* https://github.com/webpack/extract-text-webpack-plugin
+
+---
+
+# ExtractTextPlugin
+
+```js
+let ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+//...
+
+loaders: [{
+  test: /\.scss$/,
+  loader: ExtractTextPlugin.extract(
+    "style-loader",
+    "css-loader!" +
+    "autoprefixer-loader?browsers=last 3 version" +
+    "!sass-loader?outputStyle=expanded&" +
+    "includePaths[]=" + path.resolve(__dirname, "./node_modules"))
+},
+//...
+],
+plugins: [new ExtractTextPlugin("[name].css")]
+```
+
+* Will create css files
+* Named after your entries
+* `cities.css`, `continents.css`, `common.css`, etc
 
 ---
 
@@ -204,6 +288,7 @@ class: center, middle
 * Important to show something fast
 * Render the "above the fold" content
 * Can utilize code splitting
+* Use WebPageTest or Chrome DevTools
 
 ---
 
@@ -217,15 +302,61 @@ class: center, middle
 
 ![](http://d.pr/i/zYks+)
 
+
 ---
 
 #  Code Splitting
 
 * Create "chunks"
 * Load async like w/ require.js
-* Uses `require.ensure`
+* Uses `require` or `require.ensure`
 
+---
 
+# Code Splitting
+
+```js
+import Masthead from "rizzo-next/src/components/masthead";
+import rizzo from "rizzo-next";
+import "./main";
+
+// ...
+
+require.ensure([
+  "./below_the_fold"
+], function(require) {
+  // Now require it "sync"
+  require("./below_the_fold");
+
+}, "below_the_fold");
+```
+![](images/below_stats.png)
+
+* Creates a named chunk called "below_the_fold"
+
+---
+
+# Code Splitting
+
+```js
+require.ensure([
+  "./below_the_fold"
+], function(require) {
+  // Now require it "sync"
+  require("./below_the_fold");
+
+  // Create yet another unnamed chunk
+  require([
+    "rizzo-next/src/components/hotels",
+    "rizzo-next/src/components/food_and_drink",
+    "rizzo-next/src/components/survival_guide"
+  ], function(Hotels) {
+    // ...
+  });
+});
+```
+
+* Create another chunk
 ---
 
 class: center, middle
@@ -285,8 +416,13 @@ export default class Logger {
 * Will export as `module.exports = Logger;`
 
 ---
+class: center, middle
 
-# Loaders
+# Transpilers
+
+---
+
+# Transpile Loaders
 
 ```js
 module: {
@@ -294,12 +430,18 @@ module: {
     test: /\.js$/,
     exclude: /(node_modules)/,
     loader: "babel"
+  }, {
+    test: /\.ts$/,
+    loader: "typescript"
+  }, {
+    test: /\.coffee$/,
+    loader: "coffee"
   }]
 }
 ```
 
 * Test file types
-* Pass through loaders
+* Pass through loaders for Transpilers
 
 ???
 
@@ -308,23 +450,42 @@ module: {
 * Use `test` to take any file with that extension and push it through the loader
 * Here we're using the `babel-loader`
 * Query params for options
+
 ---
 
-# Loaders
+# TC39 stages
+
+* TC39 has [stages](https://tc39.github.io/process-document/)
+* 0 for strawman
+* 1 for proposed
+* 2 for Draft
+* Decorators by [Yehuda Katz](http://twitter.com/wycats) is proposed
+
+---
+
+# Use early stages Now
 
 ```js
-module: {
-  loaders: [{
-    test: /\.scss$/,
-    loader: "style!css!sass"
-  }]
+@component
+class MyComponent() {
+  @readonly
+  get alerts() {
+    return [/*...*/];
+  }
+  @publish
+  fooMethod() {
+    // ...
+  }
 }
 ```
 
-* Use `node-sass`
-* `sass-loader` compiles
-* `css-loader` sends compiled CSS to...
-* `style-loader` inlines CSS
+```js
+loader: "babel?stage=1"
+```
+
+* Decorators allow you to wrap methods
+* Use now and test w/ `stage=1`
+* Great for the TC39
 
 ---
 
@@ -336,6 +497,31 @@ module: {
 1. Unit test w/ Karma and Mocha
 1. Pre and post loaders
 1. Feature flags
+
+---
+
+# Lint with PreLoaders
+
+---
+
+# Feature flags
+
+```js
+export default class Logger {
+  /**
+   * Log an error
+   * @param {Error|Object|String} message Either string or object containing error details
+   */
+  error(err) {
+    console.error(err);
+
+    if (ENV_PROD) {
+      airbrake.notify(err);
+    }
+  }
+}
+```
+
 
 ---
 
