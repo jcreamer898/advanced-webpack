@@ -51,6 +51,13 @@ class: center, middle
 # WebPack
 
 ---
+class: center, middle
+
+### When I looked at the WebPack API for the first time...
+
+![](images/confused.gif)
+
+---
 
 # WebPack
 
@@ -59,6 +66,7 @@ class: center, middle
 * CommonJS, AMD, Node
 * Loaders
 * Plugins
+* Vast ecosystem w/ strange API
 
 ???
 
@@ -71,52 +79,49 @@ class: center, middle
 
 ---
 
-# Get Started
+# Run WebPack with the CLI
 
 ```shell
 npm install -g webpack
-```
-
-* Install WebPack globally
-* Install Babel Loader locally
-
----
-
-# Run WebPack with the CLI
-
-```bash
 webpack --progress
 ```
 
-* Now just run it!
-* Should have an output at `dist`
-* Transpiled JS
+* Use progress to show output info
 
 ---
 
 # Useful CLI options
 
+![](images/display-reasons.png)
+
 * `--display-modules --display-reasons` shows some info about why your modules are included
 
---
+---
+# Useful CLI options
+
+![](images/display-chunks.png)
 
 * `--display-chunks` will show any other chunks you've created
 
---
+---
+# Useful CLI options
 
 * `--output-library-target target` maps to configuration options `output.libraryTarget`
+* Can map any config
 
---
+---
+# Useful CLI options
 
 * `-d` alias for `--debug --devtool source-map --output-pathinfo` will output source maps
+* `-p` alias for `--optimize-minimize --optimize-occurence-order`
 
 ---
 
 # Performance tool
 
-* `--profile --json >> stats.json` output build statistics for [analyse](webpack.github.io/analyse) tool
-
 <img src="images/perf.png" style="width: 100%" />
+
+* `--profile --json >> stats.json` output build statistics for [analyse](http://webpack.github.io/analyse) tool
 
 ???
 
@@ -389,7 +394,7 @@ Allows you to write in any format and output AMD still if needed
 
 ```js
 output: {
-  libraryTarget: "amd"
+  libraryTarget: "commonjs2"
 },
 target: "node"
 ```
@@ -418,7 +423,14 @@ export default class Logger {
 ---
 class: center, middle
 
-# Transpilers
+# Loaders
+
+---
+class: center middle
+
+## When you have dreams about new JS features and remember you still have to support IE8...
+
+![](images/picard-surprise.gif)
 
 ---
 
@@ -489,22 +501,33 @@ loader: "babel?stage=1"
 
 ---
 
-1. CLI options
-1. Targets (including node)
-1. Code Splitting
-1. Critical CSS
-1. Create css files
-1. Unit test w/ Karma and Mocha
-1. Pre and post loaders
-1. Feature flags
+# PreLoaders and PostLoaders
+
+```js
+preLoaders: [{
+  test: /\.jsx?$/,
+  loader: "eslint-loader",
+  exclude: /node_modules/
+}],
+postLoaders: [{
+  test: /\.js$/,
+  include: path.resolve("src/components/"),
+  loader: "istanbul-instrumenter"
+}]
+```
+
+* Runs before other loaders
+* `jslint`, `eslint`, `istanbul`
+* Istanbul instrumentation for code coverage
+
+---
+class: center, middle
+
+# More Plugins
 
 ---
 
-# Lint with PreLoaders
-
----
-
-# Feature flags
+# Feature flags w/ Define Plugin
 
 ```js
 export default class Logger {
@@ -522,6 +545,26 @@ export default class Logger {
 }
 ```
 
+---
+
+# Define Plugin
+
+```js
+// webpack.dev.js
+var define = new webpack.DefinePlugin({
+  ENV_PROD: true
+});
+```
+```js
+// webpack.dev.js
+var define = new webpack.DefinePlugin({
+  ENV_PROD: false
+});
+```
+
+* Multiple webpack configs
+* Will replace w/ `false` or `true`
+* Removed in a prod build
 
 ---
 
