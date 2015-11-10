@@ -90,34 +90,50 @@ webpack --progress
 
 ---
 
-# Useful CLI options
+### Useful CLI options
+
+![](images/hidden-modules.png)
+
+* Modules hidden by default
+
+---
+
+### Useful CLI Options
+
+![](images/display-modules.png)
+
+* `--display-modules` shows all your modules
+
+---
+
+### Useful CLI options
 
 ![](images/display-reasons.png)
 
 * `--display-modules --display-reasons` shows some info about why your modules are included
 
 ---
-# Useful CLI options
+### Useful CLI options
 
 ![](images/display-chunks.png)
 
 * `--display-chunks` will show any other chunks you've created
 
 ---
-# Useful CLI options
+### Useful CLI options
 
 * `--output-library-target target` maps to configuration options `output.libraryTarget`
 * Can map any config
 
 ---
-# Useful CLI options
+### Useful CLI options
 
 * `-d` alias for `--debug --devtool source-map --output-pathinfo` will output source maps
 * `-p` alias for `--optimize-minimize --optimize-occurence-order`
 
 ---
 
-# Performance tool
+### Performance tool
 
 <img src="images/perf.png" style="width: 100%" />
 
@@ -137,7 +153,7 @@ class: center, middle
 
 class: left
 
-# Load only the JavaScript/CSS needed
+### Load only the JavaScript/CSS needed
 
 * Each page needs it's own assets
 * How to separate?
@@ -146,7 +162,7 @@ class: left
 
 ---
 
-# Multiple Pages Example
+### Multiple Pages Example
 
 ```js
 entry: {
@@ -176,7 +192,7 @@ output: {
 
 ---
 
-# Plugins
+### Plugins
 
 * Many different webpack Plugins
 * Easy to install and use
@@ -186,7 +202,7 @@ output: {
 
 ---
 
-# CommonsChunk
+### CommonsChunk
 
 ```js
 entry: {
@@ -202,16 +218,16 @@ plugins: [new webpack.optimize.CommonsChunkPlugin({
 * Create a "common" bundle
 * 2 or more times
 * Can default with jQuery, etc
-* Will extract common modules
+* Will extract common modules, JS, and CSS
 
 ---
 class: center, middle
 
-# CSS
+# CSS w/ WebPack
 
 ---
 
-# CSS Loaders
+### CSS Loaders
 
 ```js
 module: {
@@ -221,11 +237,22 @@ module: {
   }]
 }
 ```
+```
+// src/components/header/header.js
+import Navigation from "../navigation";
+
+require("./header.scss");
+
+export default class Header {
+  // ...
+}
+```
 
 * Uses `node-sass`
 * `sass-loader` compiles
 * `css-loader` sends compiled CSS to...
 * `style-loader` **inlines** CSS
+* `require` css keeps things together
 
 ???
 
@@ -233,13 +260,13 @@ node-sass is a c++ version of sass which is very fast
 
 ---
 
-# css-loader
+### css-loader
 
-<img src="images/instagram.png" style="width: 100%" />
+<img src="images/instagram.png" style="width: 80%" />
 
 ---
 
-# css-loader
+### css-loader
 
 * Inline css is fast
 * Not always ideal
@@ -251,7 +278,7 @@ In a web app, you can deal with css Easy
 
 ---
 
-# ExtractTextPlugin
+### ExtractTextPlugin
 
 ```shell
 npm install extract-text-webpack-plugin --save-dev
@@ -261,7 +288,7 @@ npm install extract-text-webpack-plugin --save-dev
 
 ---
 
-# ExtractTextPlugin
+### ExtractTextPlugin
 
 ```js
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -288,39 +315,42 @@ plugins: [new ExtractTextPlugin("[name].css")]
 
 ---
 
-# Critical CSS
+### Critical CSS
 
 * Important to show something fast
 * Render the "above the fold" content
+* Use WebPageTest.org or Chrome DevTools
+* [Scott Jehl](https://www.filamentgroup.com/lab/performance-rwd.html) on critical css
 * Can utilize code splitting
-* Use WebPageTest or Chrome DevTools
 
 ---
 
-# Critical CSS
+### Critical CSS
 
 <img src="images/above-the-fold.png" style="width: 100%;" />
 
 ---
 
-# Timeline
+### Timeline
 
 ![](http://d.pr/i/zYks+)
 
+* Render fast
 
 ---
 
-#  Code Splitting
+###  Code Splitting
 
-* Create "chunks"
+* Create "dyanmic chunks"
 * Load async like w/ require.js
 * Uses `require` or `require.ensure`
 
 ---
 
-# Code Splitting
+### Code Splitting
 
 ```js
+// cities.js
 import Masthead from "rizzo-next/src/components/masthead";
 import rizzo from "rizzo-next";
 import "./main";
@@ -335,13 +365,23 @@ require.ensure([
 
 }, "below_the_fold");
 ```
-![](images/below_stats.png)
 
+* Above `ensure` goes to `cities` or `common`
 * Creates a named chunk called "below_the_fold"
+* Also have a `below_the_fold.js` file, not to be confused
+
+???
+
+main has subnav, footer, top experiences, components I know will most likely be positioned above the fold
+
+---
+### Code Splitting
+
+![](images/build.png)
 
 ---
 
-# Code Splitting
+### Code Splitting
 
 ```js
 require.ensure([
@@ -358,10 +398,75 @@ require.ensure([
   ], function(Hotels) {
     // ...
   });
-});
+}, "below_the_fold");
 ```
 
 * Create another chunk
+---
+
+### Chunk in a chunk
+
+```js
+require.ensure([
+  //...
+], function(require) {
+  require([
+    //...
+  ], function() {
+
+  });
+});
+```
+---
+
+### Chunk in a chunk in a chunk
+
+```js
+require.ensure([
+  //...
+], function(require) {
+  require([
+    //...
+  ], function() {
+    require([
+      //...
+    ], function() {
+
+    });
+  });
+});
+```
+---
+
+### Chunk in a chunk in a chunk in a chunk
+
+```js
+require.ensure([
+  //...
+], function(require) {
+  require([
+    //...
+  ], function() {
+    require([
+      //...
+    ], function() {
+      require([
+        //...
+      ], function() {
+
+      });
+    });
+  });
+});
+```
+
+---
+class: center, middle
+
+### Chunkception?
+
+![](images/inception-top.gif)
+
 ---
 
 class: center, middle
@@ -370,7 +475,7 @@ class: center, middle
 
 ---
 
-# Target AMD
+### Target AMD
 
 ```js
 output: {
@@ -390,7 +495,7 @@ Allows you to write in any format and output AMD still if needed
 
 ---
 
-# Target Node.js
+### Target Node.js
 
 ```js
 output: {
@@ -402,10 +507,11 @@ target: "node"
 
 * Support all ES features
 * Not all versions of node support ES2015
+* Just stop when you can upgrade
 
 ---
 
-# Target Node.js
+### Target Node.js
 
 ```js
 // lib/logger.js
@@ -423,7 +529,7 @@ export default class Logger {
 ---
 class: center, middle
 
-# Loaders
+# Transpiling w/ WebPack
 
 ---
 class: center middle
@@ -434,12 +540,12 @@ class: center middle
 
 ---
 
-# Transpile Loaders
+### Transpile Loaders
 
 ```js
 module: {
   loaders: [{
-    test: /\.js$/,
+    test: /\.jsx?$/,
     exclude: /(node_modules)/,
     loader: "babel"
   }, {
@@ -454,6 +560,7 @@ module: {
 
 * Test file types
 * Pass through loaders for Transpilers
+* Babel works w/ ES6 AND React
 
 ???
 
@@ -465,7 +572,7 @@ module: {
 
 ---
 
-# TC39 stages
+### TC39 stages
 
 * TC39 has [stages](https://tc39.github.io/process-document/)
 * 0 for strawman
@@ -475,7 +582,7 @@ module: {
 
 ---
 
-# Use early stages Now
+### Use early stages Now
 
 ```js
 @component
@@ -500,8 +607,13 @@ loader: "babel?stage=1"
 * Great for the TC39
 
 ---
+class: center, middle
 
-# PreLoaders and PostLoaders
+# More Plugins and Loaders
+
+---
+
+### PreLoaders and PostLoaders
 
 ```js
 preLoaders: [{
@@ -521,33 +633,8 @@ postLoaders: [{
 * Istanbul instrumentation for code coverage
 
 ---
-class: center, middle
 
-# More Plugins
-
----
-
-# Feature flags w/ Define Plugin
-
-```js
-export default class Logger {
-  /**
-   * Log an error
-   * @param {Error|Object|String} message Either string or object containing error details
-   */
-  error(err) {
-    console.error(err);
-
-    if (ENV_PROD) {
-      airbrake.notify(err);
-    }
-  }
-}
-```
-
----
-
-# Define Plugin
+### Define Plugin
 
 ```js
 // webpack.dev.js
@@ -568,12 +655,56 @@ var define = new webpack.DefinePlugin({
 
 ---
 
+### Feature flags w/ Define Plugin
+
+```js
+export default class Logger {
+  /**
+   * Log an error
+   * @param {Error|Object|String} message Either string or object containing error details
+   */
+  error(err) {
+    console.error(err);
+
+    if (ENV_PROD) {
+      airbrake.notify(err);
+    }
+  }
+}
+```
+
+---
+### Inject Loader
+
+```js
+let Injector = require("inject!../../../src/components/login/login_manager");
+
+let doneSpy = sinon.spy();
+let failSpy = sinon.spy();
+
+let ajaxMock = sinon.stub()
+  .returns({
+    done: doneSpy,
+    fail: failSpy
+  });
+
+let LoginManager = Injector({
+  "jquery": {
+    ajax: ajaxMock
+  }
+});
+```
+
+* Mock module dependencies
+* Helps in isolating the system under test
+
+---
+
 # Resources
 
 * [WebPack](http://webpack.github.io)
 * Awesome Pete Hunt [Instgram talk](https://www.youtube.com/watch?v=VkTCL6Nqm6Y)
-* Link to Slides -> http://bit.ly/cob-js-23
-* GitHub Repo -> http://bit.ly/cob-js-23-repo
+
 
 ---
 class: center, middle
@@ -582,5 +713,3 @@ class: center, middle
 
 ### [@jcreamer898](http://twitter.com/jcreamer898)
 ### [jonathancreamer.com](http://jonathancreamer.com)
-
-![](images/livelong.gif)
