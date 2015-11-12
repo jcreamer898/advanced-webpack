@@ -277,6 +277,13 @@ node-sass is a c++ version of sass which is very fast
 In a web app, you can deal with css Easy
 
 ---
+class: center, middle
+
+### When you expect your CSS to load, but you have a flash of unstyled content...
+
+![](images/cssnotpretty.gif)
+
+---
 
 ### ExtractTextPlugin
 
