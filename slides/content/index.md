@@ -111,7 +111,9 @@ webpack --progress
 ### Useful CLI options
 
 * `-d` alias for `--debug --devtool source-map --output-pathinfo` will output source maps
+* `--watch` to recompile assets when source files change
 * `-p` alias for `--optimize-minimize --optimize-occurence-order`
+
 
 ---
 
@@ -661,6 +663,52 @@ export default class Logger {
   }
 }
 ```
+
+---
+
+### Multiple Builds
+
+```js
+// webpack.dev.js
+module.exports = {
+  entry: { /*...*/ },
+  output: {},
+  loaders: [],
+  devtool: "source-map"
+};
+```
+```js
+// webpack.prod.js
+let common = require("./webpack.common");
+
+module.exports = Object.assign(common, {
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.DefinePlugin({
+      ENV_PROD: true
+    });
+  ]
+});
+```
+* Separate Builds
+* Could have a common as well
+* `webpack --config webpack.prod`
+
+---
+
+### Use w/ NPM to replace grunt
+
+```js
+{
+  "scripts": {
+    "dev": "webpack --watch --progress --config webpack.dev",
+    "build": "webpack --config webpack.prod",
+  }
+}
+```
+
+* `npm run dev` for local
+* `npm run build` on production
 
 ---
 ### Inject Loader
