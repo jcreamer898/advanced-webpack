@@ -27,24 +27,6 @@ class: center, middle
 
 ???
 
-
----
-
-name: agenda
-
-# Agenda
-
-1. Intro
-1. CLI options
-1. Targets (including node)
-1. Code Splitting
-1. Create css files
-1. Unit test w/ Karma and Mocha
-1. Critical CSS
-1. Stats w/ online tool
-1. Pre and post loaders
-1. Feature flags
-
 ---
 class: center, middle
 
