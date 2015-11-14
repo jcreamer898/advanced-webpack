@@ -1,24 +1,13 @@
-var webpack = require("webpack");
-
 module.exports = {
-  entry: {
-    "common": [],
-    "app": "./js/index",
-    "starfleet": "./js/starfleet/index",
-    "captainsLog": "./js/captainsLog/index"
-  },
+  entry: ["./js/app.js"],
   output: {
     path: "./dist",
-    filename: "[name]-[chunkhash].js"
+    filename: "bundle.js"
   },
   module: {
     loaders: [{
       test: /\.js$/,
-      loader: "babel-loader"
+      loader: "babel?presets[]=es2015"
     }]
-  },
-  plugins: [new webpack.optimize.CommonsChunkPlugin({
-    name: "common",
-    minChunks: 2
-  })]
+  }
 };

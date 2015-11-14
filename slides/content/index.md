@@ -33,13 +33,6 @@ class: center, middle
 # WebPack
 
 ---
-class: center, middle
-
-### When I looked at the WebPack API for the first time...
-
-![](images/confused.gif)
-
----
 
 # WebPack
 
@@ -58,16 +51,39 @@ class: center, middle
 * Extremely flexible
 * Can write code in CommonJS, or AMD out of the box
 * Use Babel-Loader for ES6
+---
+class: center, middle
+
+### When I looked at the WebPack API for the first time...
+
+![](images/confused.gif)
+
 
 ---
 
 # Run WebPack with the CLI
 
+```js
+module.exports = {
+  entry: ["./lib/app"]
+  output: {
+    path: "./dist",
+    filename: "index.js"
+  },
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      loader: "babel?presets[]=es2015"
+    }]
+  }
+};
+```
 ```shell
-npm install -g webpack
+npm install -g webpack babel-loader babel-preset-es2015
 webpack --progress
 ```
 
+* `webpack.config.js`
 * Use progress to show output info
 
 ---
@@ -175,6 +191,7 @@ output: {
 [chunkhash] is the hash of the actual chunk
 
 ---
+exclude: true
 
 ### Plugins
 
@@ -241,6 +258,13 @@ export default class Header {
 ???
 
 node-sass is a c++ version of sass which is very fast
+
+---
+class: center, middle
+
+### The first time you hear you can include CSS from a JS file...
+
+![](images/whut.gif)
 
 ---
 
@@ -360,6 +384,7 @@ require.ensure([
 * Above `ensure` goes to `cities` or `common`
 * Creates a named chunk called "below_the_fold"
 * Also have a `below_the_fold.js` file, not to be confused
+* Create small files
 
 ???
 
@@ -372,29 +397,6 @@ main has subnav, footer, top experiences, components I know will most likely be 
 
 ---
 
-### Code Splitting
-
-```js
-require.ensure([
-  "./below_the_fold"
-], function(require) {
-  // Now require it "sync"
-  require("./below_the_fold");
-
-  // Create yet another unnamed chunk
-  require([
-    "rizzo-next/src/components/hotels",
-    "rizzo-next/src/components/food_and_drink",
-    "rizzo-next/src/components/survival_guide"
-  ], function(Hotels) {
-    // ...
-  });
-}, "below_the_fold");
-```
-
-* Create another chunk
----
-
 ### Chunk in a chunk
 
 ```js
@@ -402,9 +404,11 @@ require.ensure([
   //...
 ], function(require) {
   require([
-    //...
-  ], function() {
-
+    "rizzo-next/src/components/hotels",
+    "rizzo-next/src/components/food_and_drink",
+    "rizzo-next/src/components/survival_guide"
+  ], function(Hotels) {
+    // ...
   });
 });
 ```
@@ -538,7 +542,7 @@ module: {
   loaders: [{
     test: /\.jsx?$/,
     exclude: /(node_modules)/,
-    loader: "babel"
+    loader: "babel?presets[]=es2015,stage-2"
   }, {
     test: /\.ts$/,
     loader: "typescript"
@@ -562,7 +566,7 @@ module: {
 * Query params for options
 
 ---
-
+exclude: true
 ### TC39 stages
 
 * TC39 has [stages](https://tc39.github.io/process-document/)
@@ -589,12 +593,8 @@ class MyComponent() {
 }
 ```
 
-```js
-loader: "babel?stage=1"
-```
-
 * Decorators allow you to wrap methods
-* Use now and test w/ `stage=1`
+* Use now and test w/ `stage-2`
 * Great for the TC39
 
 ---
@@ -622,47 +622,6 @@ postLoaders: [{
 * Runs before other loaders
 * `jslint`, `eslint`, `istanbul`
 * Istanbul instrumentation for code coverage
-
----
-
-### Define Plugin
-
-```js
-// webpack.dev.js
-var define = new webpack.DefinePlugin({
-  ENV_PROD: true
-});
-```
-```js
-// webpack.dev.js
-var define = new webpack.DefinePlugin({
-  ENV_PROD: false
-});
-```
-
-* Multiple webpack configs
-* Will replace w/ `false` or `true`
-* Removed in a prod build
-
----
-
-### Feature flags w/ Define Plugin
-
-```js
-export default class Logger {
-  /**
-   * Log an error
-   * @param {Error|Object|String} message Either string or object containing error details
-   */
-  error(err) {
-    console.error(err);
-
-    if (ENV_PROD) {
-      airbrake.notify(err);
-    }
-  }
-}
-```
 
 ---
 
@@ -696,6 +655,49 @@ module.exports = Object.assign(common, {
 
 ---
 
+### Define Plugin
+
+```js
+// webpack.dev.js
+var define = new webpack.DefinePlugin({
+  ENV_PROD: true
+});
+```
+```js
+// webpack.prod.js
+var define = new webpack.DefinePlugin({
+  ENV_PROD: false
+});
+```
+
+* Multiple webpack configs
+* Will replace w/ `false` or `true`
+* Removed in a prod build
+
+---
+
+### Feature flags w/ Define Plugin
+
+```js
+export default class Logger {
+  /**
+   * Log an error
+   * @param {Error|Object|String} message Either string or object containing error details
+   */
+  error(err) {
+    console.error(err);
+
+    if (ENV_PROD) {
+      airbrake.notify(err);
+    }
+  }
+}
+```
+
+* Minified
+
+---
+
 ### Use w/ NPM to replace grunt
 
 ```js
@@ -714,10 +716,12 @@ module.exports = Object.assign(common, {
 ### Inject Loader
 
 ```js
+import $ from "jquery";
+```
+```js
 let Injector = require("inject!../../../src/components/login/login_manager");
 
-let doneSpy = sinon.spy();
-let failSpy = sinon.spy();
+let doneSpy = sinon.spy(), failSpy = sinon.spy();
 
 let ajaxMock = sinon.stub()
   .returns({
@@ -740,7 +744,9 @@ let LoginManager = Injector({
 # Resources
 
 * [WebPack](http://webpack.github.io)
+* http://webpack.github.io/analyse/
 * Awesome Pete Hunt [Instgram talk](https://www.youtube.com/watch?v=VkTCL6Nqm6Y)
+* http://jonathancreamer.com/advanced-webpack-part-1-the-commonschunk-plugin/
 
 
 ---

@@ -1,17 +1,15 @@
 {
   "name": "demo",
   "version": "1.0.0",
+  "private": "true",
   "description": "Showing off webpack",
-  "main": "js/index.js",
-  "scripts": {
-    "test": "karma"
-  },
-  "author": "",
-  "license": "ISC",
+  "author": "Jonathan Creamer",
+  "license": "MIT",
   "devDependencies": {
-    "babel-core": "^5.4.7",
-    "babel-loader": "^5.1.3",
-    "node-libs-browser": "^0.5.2",
-    "webpack": "^1.9.10"
+    "babel-core": "^6.1.21",
+    "babel-loader": "^6.1.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-stage-2": "^6.1.18",
+    "webpack": "^1.12.5"
   }
 }
