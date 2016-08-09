@@ -644,8 +644,10 @@ module.exports = Object.assign(common, {
   plugins: [
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.DefinePlugin({
-      ENV_PROD: true
-    });
+      "process.env": {
+        NODE_ENV: JSON.stringify("development"),
+      },
+    }),
   ]
 });
 ```
@@ -659,14 +661,18 @@ module.exports = Object.assign(common, {
 
 ```js
 // webpack.dev.js
-var define = new webpack.DefinePlugin({
-  ENV_PROD: true
+new webpack.DefinePlugin({
+  "process.env": {
+    NODE_ENV: JSON.stringify("development"),
+  },
 });
 ```
 ```js
 // webpack.prod.js
-var define = new webpack.DefinePlugin({
-  ENV_PROD: false
+new webpack.DefinePlugin({
+  "process.env": {
+    NODE_ENV: JSON.stringify("production"),
+  },
 });
 ```
 
@@ -687,7 +693,7 @@ export default class Logger {
   error(err) {
     console.error(err);
 
-    if (ENV_PROD) {
+    if (proccess.env.) {
       airbrake.notify(err);
     }
   }
@@ -695,6 +701,19 @@ export default class Logger {
 ```
 
 * Minified
+
+---
+
+### Provide Plugin
+
+```js
+const provide = new webpack.ProvidePlugin({
+  $: path.join(__dirname, "node_modules", "jquery/dist/jquery"),
+  jQuery: path.join(__dirname, "node_modules", "jquery/dist/jquery"),
+});
+```
+
+* Inject dependencies into every module
 
 ---
 
@@ -738,6 +757,14 @@ let LoginManager = Injector({
 
 * Mock module dependencies
 * Helps in isolating the system under test
+
+---
+
+### Create a plugin
+
+---
+
+### React Hot Module Replacement
 
 ---
 

@@ -1,0 +1,13 @@
+{
+  "name": "demo-ts",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "Showing off webpack",
+  "author": "Jonathan Creamer",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
+    "webpack": "^1.13.1"
+  }
+}

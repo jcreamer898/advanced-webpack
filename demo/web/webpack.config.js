@@ -7,7 +7,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loader: "babel?presets[]=es2015"
+      loader: "babel?presets[]=es2015&plugins[]=transform-class-properties"
     }]
   }
 };
