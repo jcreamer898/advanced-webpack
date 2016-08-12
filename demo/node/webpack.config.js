@@ -5,17 +5,17 @@ module.exports = {
     "app": "./lib/app"
   },
   output: {
-    path: "./lib",
-    target: "commonjs2",
+    path: "./dist",
+    libraryTarget: "commonjs",
+    library: "MyAwesomeLogger",
+    umdNamedDefine: true,
     filename: "index.js"
   },
+  target: "node",
   module: {
     loaders: [{
       test: /\.js$/,
-      loader: "babel-loader"
+      loader: "babel?presets[]=es2015"
     }]
-  },
-  resolveLoader: {
-    root: path.join(__dirname, "../web/node_modules")
   }
 };

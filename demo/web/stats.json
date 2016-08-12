@@ -3,7 +3,7 @@
   "warnings": [],
   "version": "1.13.1",
   "hash": "7de01fda337615918291",
-  "time": 1997,
+  "time": 1241,
   "publicPath": "",
   "assetsByChunkName": {
     "another": "another.js",
@@ -94,8 +94,7 @@
           "issuer": null,
           "profile": {
             "factory": 23,
-            "building": 1844,
-            "dependencies": 35
+            "building": 1039
           },
           "failed": false,
           "errors": 0,
@@ -152,8 +151,9 @@
           "assets": [],
           "issuer": null,
           "profile": {
-            "factory": 1063,
-            "building": 763
+            "factory": 590,
+            "building": 508,
+            "dependencies": 40
           },
           "failed": false,
           "errors": 0,
@@ -208,7 +208,7 @@
           "assets": [],
           "issuer": null,
           "profile": {
-            "factory": 0,
+            "factory": 1,
             "building": 1
           },
           "failed": false,
@@ -231,10 +231,10 @@
             2
           ],
           "assets": [],
-          "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
+          "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
           "profile": {
-            "factory": 71,
-            "building": 50
+            "factory": 77,
+            "building": 52
           },
           "failed": false,
           "errors": 0,
@@ -242,18 +242,18 @@
           "reasons": [
             {
               "moduleId": 0,
-              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
-              "module": "./js/app.js",
-              "moduleName": "./js/app.js",
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
+              "module": "./js/anotherApp.js",
+              "moduleName": "./js/anotherApp.js",
               "type": "cjs require",
               "userRequest": "./itineraryMaker",
               "loc": "7:22-49"
             },
             {
               "moduleId": 0,
-              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
-              "module": "./js/anotherApp.js",
-              "moduleName": "./js/anotherApp.js",
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
+              "module": "./js/app.js",
+              "moduleName": "./js/app.js",
               "type": "cjs require",
               "userRequest": "./itineraryMaker",
               "loc": "7:22-49"
@@ -285,10 +285,10 @@
             2
           ],
           "assets": [],
-          "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
+          "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
           "profile": {
-            "factory": 72,
-            "building": 58
+            "factory": 79,
+            "building": 59
           },
           "failed": false,
           "errors": 0,
@@ -296,18 +296,18 @@
           "reasons": [
             {
               "moduleId": 0,
-              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
-              "module": "./js/app.js",
-              "moduleName": "./js/app.js",
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
+              "module": "./js/anotherApp.js",
+              "moduleName": "./js/anotherApp.js",
               "type": "cjs require",
               "userRequest": "./stop",
               "loc": "11:12-29"
             },
             {
               "moduleId": 0,
-              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
-              "module": "./js/anotherApp.js",
-              "moduleName": "./js/anotherApp.js",
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
+              "module": "./js/app.js",
+              "moduleName": "./js/app.js",
               "type": "cjs require",
               "userRequest": "./stop",
               "loc": "11:12-29"
@@ -373,9 +373,9 @@
           "assets": [],
           "issuer": null,
           "profile": {
-            "factory": 1064,
-            "building": 821,
-            "dependencies": 12
+            "factory": 590,
+            "building": 533,
+            "dependencies": 14
           },
           "failed": false,
           "errors": 0,
@@ -417,8 +417,7 @@
       "issuer": null,
       "profile": {
         "factory": 23,
-        "building": 1844,
-        "dependencies": 35
+        "building": 1039
       },
       "failed": false,
       "errors": 0,
@@ -443,8 +442,9 @@
       "assets": [],
       "issuer": null,
       "profile": {
-        "factory": 1063,
-        "building": 763
+        "factory": 590,
+        "building": 508,
+        "dependencies": 40
       },
       "failed": false,
       "errors": 0,
@@ -469,7 +469,7 @@
       "assets": [],
       "issuer": null,
       "profile": {
-        "factory": 0,
+        "factory": 1,
         "building": 1
       },
       "failed": false,
@@ -494,9 +494,9 @@
       "assets": [],
       "issuer": null,
       "profile": {
-        "factory": 1064,
-        "building": 821,
-        "dependencies": 12
+        "factory": 590,
+        "building": 533,
+        "dependencies": 14
       },
       "failed": false,
       "errors": 0,
@@ -519,10 +519,10 @@
         2
       ],
       "assets": [],
-      "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
+      "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
       "profile": {
-        "factory": 71,
-        "building": 50
+        "factory": 77,
+        "building": 52
       },
       "failed": false,
       "errors": 0,
@@ -530,18 +530,18 @@
       "reasons": [
         {
           "moduleId": 0,
-          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
-          "module": "./js/app.js",
-          "moduleName": "./js/app.js",
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
+          "module": "./js/anotherApp.js",
+          "moduleName": "./js/anotherApp.js",
           "type": "cjs require",
           "userRequest": "./itineraryMaker",
           "loc": "7:22-49"
         },
         {
           "moduleId": 0,
-          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
-          "module": "./js/anotherApp.js",
-          "moduleName": "./js/anotherApp.js",
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
+          "module": "./js/app.js",
+          "moduleName": "./js/app.js",
           "type": "cjs require",
           "userRequest": "./itineraryMaker",
           "loc": "7:22-49"
@@ -573,10 +573,10 @@
         2
       ],
       "assets": [],
-      "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
+      "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
       "profile": {
-        "factory": 72,
-        "building": 58
+        "factory": 79,
+        "building": 59
       },
       "failed": false,
       "errors": 0,
@@ -584,18 +584,18 @@
       "reasons": [
         {
           "moduleId": 0,
-          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
-          "module": "./js/app.js",
-          "moduleName": "./js/app.js",
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
+          "module": "./js/anotherApp.js",
+          "moduleName": "./js/anotherApp.js",
           "type": "cjs require",
           "userRequest": "./stop",
           "loc": "11:12-29"
         },
         {
           "moduleId": 0,
-          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
-          "module": "./js/anotherApp.js",
-          "moduleName": "./js/anotherApp.js",
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
+          "module": "./js/app.js",
+          "moduleName": "./js/app.js",
           "type": "cjs require",
           "userRequest": "./stop",
           "loc": "11:12-29"

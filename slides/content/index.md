@@ -315,7 +315,8 @@ export default class Header {
 
 ???
 
-node-sass is a c++ version of sass which is very fast
+node-sass is a c++ version of sass which is very fast  
+You may be thinking, wait... css in JavaScript?
 
 ---
 class: center, middle
@@ -857,16 +858,53 @@ class: center, middle
 ---
 
 ### WebPack 2
+* [Roadmap](https://webpack.github.io/docs/roadmap.html)
 * Native ES6 module support
 * System.js for chunk loading
-* Tree shaking
 * Performance enhancements
-* [More...](https://webpack.github.io/docs/roadmap.html)
-* https://gist.github.com/sokra/27b24881210b56bbaff7
+* Tree shaking
 
 ???
 
+ES6 works in webpack 1 only w/ babel
 Tree shaking removes unused exports
+Didn't know what tree shaking was so like everyone else I googled it with giphy
+
+--- 
+class: center, middle
+### I googled it
+
+--
+
+### with giphy
+
+![](images/giphytree.png)
+
+---
+class: center, middle
+
+### Tree shaking
+
+![](images/treeshaking.gif)
+
+---
+
+### Tree shaking
+
+```js
+export function myFunction() {
+  return "First thing";
+}
+
+export function myOtherFunction() {
+  return "This other thing";
+}
+```
+```js
+import { myOtherFunction } from "./functions";
+```
+
+* Will exclude myFunction from output w/ minification
 
 ---
 class: center,middle
@@ -881,6 +919,9 @@ class: center,middle
 * http://webpack.github.io/analyse/
 * Awesome Pete Hunt [Instgram talk](https://www.youtube.com/watch?v=VkTCL6Nqm6Y)
 * http://jonathancreamer.com/advanced-webpack-part-1-the-commonschunk-plugin/
+* http://www.2ality.com/2015/12/webpack-tree-shaking.html
+* https://gist.github.com/sokra/27b24881210b56bbaff7
+
 
 
 ---

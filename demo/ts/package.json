@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "stats": "webpack --progress --profile --json > stats.json",
-    "watch": "webpack-dev-server --progress --colors --hot --inline"
+    "start": "webpack-dev-server --progress --colors --hot --inline"
   },
   "devDependencies": {
     "ts-loader": "^0.8.2",
