@@ -1,11 +1,12 @@
 {
   "name": "demo-ts",
   "version": "1.0.0",
-  "private": "true",
+  "private": true,
   "description": "Showing off webpack",
   "author": "Jonathan Creamer",
   "license": "MIT",
   "scripts": {
+    "stats": "webpack --progress --profile --json > stats.json",
     "watch": "webpack-dev-server --progress --colors --hot --inline"
   },
   "devDependencies": {

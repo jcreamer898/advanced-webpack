@@ -5,6 +5,10 @@
   "description": "Showing off webpack",
   "author": "Jonathan Creamer",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack --progress",
+    "stats": "webpack --progress --profile --json > stats.json"
+  },
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.1.0",

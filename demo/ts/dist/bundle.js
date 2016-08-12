@@ -63,6 +63,7 @@
 	            name: "Nashville"
 	        });
 	        itineraryMaker.add(stop);
+	        console.log(itineraryMaker.stops);
 	    }
 	    return App;
 	}());
@@ -70,6 +71,12 @@
 	var div = document.createElement("div");
 	div.innerHTML = "Itinerary Maker";
 	document.body.appendChild(div);
+	if (false) {
+	    // accept update of dependency
+	    module.hot.accept("./app.ts", function () {
+	        var app = new App();
+	    });
+	}
 
 
 /***/ },

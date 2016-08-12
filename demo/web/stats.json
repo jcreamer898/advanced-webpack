@@ -2,21 +2,57 @@
   "errors": [],
   "warnings": [],
   "version": "1.13.1",
-  "hash": "39a48391e68c86de85a0",
-  "time": 1073,
+  "hash": "7de01fda337615918291",
+  "time": 1997,
   "publicPath": "",
   "assetsByChunkName": {
-    "main": "bundle.js"
+    "another": "another.js",
+    "app": "app.js",
+    "common": "common.js",
+    "moar": "moar.js"
   },
   "assets": [
     {
-      "name": "bundle.js",
-      "size": 4036,
+      "name": "another.js",
+      "size": 963,
       "chunks": [
         0
       ],
       "chunkNames": [
-        "main"
+        "another"
+      ],
+      "emitted": true
+    },
+    {
+      "name": "app.js",
+      "size": 964,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "app"
+      ],
+      "emitted": true
+    },
+    {
+      "name": "common.js",
+      "size": 5369,
+      "chunks": [
+        2
+      ],
+      "chunkNames": [
+        "common"
+      ],
+      "emitted": true
+    },
+    {
+      "name": "moar.js",
+      "size": 966,
+      "chunks": [
+        3
+      ],
+      "chunkNames": [
+        "moar"
       ],
       "emitted": true
     }
@@ -26,31 +62,148 @@
       "id": 0,
       "rendered": true,
       "initial": true,
-      "entry": true,
+      "entry": false,
       "extraAsync": false,
-      "size": 2379,
+      "size": 846,
       "names": [
-        "main"
+        "another"
       ],
       "files": [
-        "bundle.js"
+        "another.js"
       ],
-      "hash": "41caacf95e222b834b49",
-      "parents": [],
+      "hash": "03f5a816d51d23ca8ac6",
+      "parents": [
+        2
+      ],
       "modules": [
         {
           "id": 0,
-          "identifier": "multi main",
-          "name": "multi main",
+          "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
+          "name": "./js/anotherApp.js",
           "index": 0,
-          "index2": 3,
-          "size": 28,
+          "index2": 2,
+          "size": 846,
           "cacheable": true,
           "built": true,
           "optional": false,
           "prefetched": false,
           "chunks": [
             0
+          ],
+          "assets": [],
+          "issuer": null,
+          "profile": {
+            "factory": 23,
+            "building": 1844,
+            "dependencies": 35
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _itineraryMaker = require(\"./itineraryMaker\");\n\nvar _itineraryMaker2 = _interopRequireDefault(_itineraryMaker);\n\nvar _stop = require(\"./stop\");\n\nvar _stop2 = _interopRequireDefault(_stop);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar App =\n// Poor man's DI\nfunction App() {\n  _classCallCheck(this, App);\n\n  var itineraryMaker = arguments.length <= 0 || arguments[0] === undefined ? new _itineraryMaker2.default() : arguments[0];\n\n  itineraryMaker.add(new _stop2.default({\n    latLng: [30, -45],\n    name: \"New York\"\n  }));\n};\n\nexports.default = App;"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
+          "moduleName": "./js/anotherApp.js",
+          "loc": "",
+          "name": "another",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "rendered": true,
+      "initial": true,
+      "entry": false,
+      "extraAsync": false,
+      "size": 847,
+      "names": [
+        "app"
+      ],
+      "files": [
+        "app.js"
+      ],
+      "hash": "90d32759172fb091e030",
+      "parents": [
+        2
+      ],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
+          "name": "./js/app.js",
+          "index": 3,
+          "index2": 3,
+          "size": 847,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "assets": [],
+          "issuer": null,
+          "profile": {
+            "factory": 1063,
+            "building": 763
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _itineraryMaker = require(\"./itineraryMaker\");\n\nvar _itineraryMaker2 = _interopRequireDefault(_itineraryMaker);\n\nvar _stop = require(\"./stop\");\n\nvar _stop2 = _interopRequireDefault(_stop);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar App =\n// Poor man's DI\nfunction App() {\n  _classCallCheck(this, App);\n\n  var itineraryMaker = arguments.length <= 0 || arguments[0] === undefined ? new _itineraryMaker2.default() : arguments[0];\n\n  itineraryMaker.add(new _stop2.default({\n    latLng: [30, -45],\n    name: \"Nashville\"\n  }));\n};\n\nexports.default = App;"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
+          "moduleName": "./js/app.js",
+          "loc": "",
+          "name": "app",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 1520,
+      "names": [
+        "common"
+      ],
+      "files": [
+        "common.js"
+      ],
+      "hash": "fb6536f4ad7c4b681fc2",
+      "parents": [],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "multi common",
+          "name": "multi common",
+          "index": 4,
+          "index2": 4,
+          "size": 16,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            2
           ],
           "assets": [],
           "issuer": null,
@@ -65,44 +218,9 @@
         },
         {
           "id": 1,
-          "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
-          "name": "./js/app.js",
-          "index": 1,
-          "index2": 2,
-          "size": 847,
-          "cacheable": true,
-          "built": true,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            0
-          ],
-          "assets": [],
-          "issuer": "multi main",
-          "profile": {
-            "factory": 17,
-            "building": 972
-          },
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "reasons": [
-            {
-              "moduleId": 0,
-              "moduleIdentifier": "multi main",
-              "module": "multi main",
-              "moduleName": "multi main",
-              "type": "single entry",
-              "userRequest": "./js/app.js"
-            }
-          ],
-          "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _itineraryMaker = require(\"./itineraryMaker\");\n\nvar _itineraryMaker2 = _interopRequireDefault(_itineraryMaker);\n\nvar _stop = require(\"./stop\");\n\nvar _stop2 = _interopRequireDefault(_stop);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar App =\n// Poor man's DI\nfunction App() {\n  _classCallCheck(this, App);\n\n  var itineraryMaker = arguments.length <= 0 || arguments[0] === undefined ? new _itineraryMaker2.default() : arguments[0];\n\n  itineraryMaker.add(new _stop2.default({\n    latLng: [30, -45],\n    name: \"Nashville\"\n  }));\n};\n\nexports.default = App;"
-        },
-        {
-          "id": 2,
           "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/itineraryMaker.js",
           "name": "./js/itineraryMaker.js",
-          "index": 2,
+          "index": 1,
           "index2": 0,
           "size": 1272,
           "cacheable": true,
@@ -110,23 +228,41 @@
           "optional": false,
           "prefetched": false,
           "chunks": [
-            0
+            2
           ],
           "assets": [],
           "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
           "profile": {
-            "factory": 6,
-            "building": 55
+            "factory": 71,
+            "building": 50
           },
           "failed": false,
           "errors": 0,
           "warnings": 0,
           "reasons": [
             {
-              "moduleId": 1,
+              "moduleId": 0,
               "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
               "module": "./js/app.js",
               "moduleName": "./js/app.js",
+              "type": "cjs require",
+              "userRequest": "./itineraryMaker",
+              "loc": "7:22-49"
+            },
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
+              "module": "./js/anotherApp.js",
+              "moduleName": "./js/anotherApp.js",
+              "type": "cjs require",
+              "userRequest": "./itineraryMaker",
+              "loc": "7:22-49"
+            },
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/moarApp.js",
+              "module": "./js/moarApp.js",
+              "moduleName": "./js/moarApp.js",
               "type": "cjs require",
               "userRequest": "./itineraryMaker",
               "loc": "7:22-49"
@@ -135,10 +271,10 @@
           "source": "\"use strict\";\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar ItineraryMaker = function () {\n  function ItineraryMaker() {\n    _classCallCheck(this, ItineraryMaker);\n\n    this.stops = [];\n  }\n\n  _createClass(ItineraryMaker, [{\n    key: \"add\",\n    value: function add(stop) {\n      this.stops.push(stop);\n    }\n  }, {\n    key: \"remove\",\n    value: function remove(stop) {\n      var index = this.stops.indexOf(stop);\n      this.stops.splice(index, 1);\n    }\n  }]);\n\n  return ItineraryMaker;\n}();\n\nexports.default = ItineraryMaker;"
         },
         {
-          "id": 3,
+          "id": 2,
           "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/stop.js",
           "name": "./js/stop.js",
-          "index": 3,
+          "index": 2,
           "index2": 1,
           "size": 232,
           "cacheable": true,
@@ -146,23 +282,41 @@
           "optional": false,
           "prefetched": false,
           "chunks": [
-            0
+            2
           ],
           "assets": [],
           "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
           "profile": {
-            "factory": 6,
-            "building": 61
+            "factory": 72,
+            "building": 58
           },
           "failed": false,
           "errors": 0,
           "warnings": 0,
           "reasons": [
             {
-              "moduleId": 1,
+              "moduleId": 0,
               "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
               "module": "./js/app.js",
               "moduleName": "./js/app.js",
+              "type": "cjs require",
+              "userRequest": "./stop",
+              "loc": "11:12-29"
+            },
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
+              "module": "./js/anotherApp.js",
+              "moduleName": "./js/anotherApp.js",
+              "type": "cjs require",
+              "userRequest": "./stop",
+              "loc": "11:12-29"
+            },
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/moarApp.js",
+              "module": "./js/moarApp.js",
+              "moduleName": "./js/moarApp.js",
               "type": "cjs require",
               "userRequest": "./stop",
               "loc": "11:12-29"
@@ -175,11 +329,70 @@
       "origins": [
         {
           "moduleId": 0,
-          "module": "multi main",
-          "moduleIdentifier": "multi main",
-          "moduleName": "multi main",
+          "module": "multi common",
+          "moduleIdentifier": "multi common",
+          "moduleName": "multi common",
           "loc": "",
-          "name": "main",
+          "name": "common",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "rendered": true,
+      "initial": true,
+      "entry": false,
+      "extraAsync": false,
+      "size": 849,
+      "names": [
+        "moar"
+      ],
+      "files": [
+        "moar.js"
+      ],
+      "hash": "28f1375373119039ce84",
+      "parents": [
+        2
+      ],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/moarApp.js",
+          "name": "./js/moarApp.js",
+          "index": 5,
+          "index2": 5,
+          "size": 849,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            3
+          ],
+          "assets": [],
+          "issuer": null,
+          "profile": {
+            "factory": 1064,
+            "building": 821,
+            "dependencies": 12
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _itineraryMaker = require(\"./itineraryMaker\");\n\nvar _itineraryMaker2 = _interopRequireDefault(_itineraryMaker);\n\nvar _stop = require(\"./stop\");\n\nvar _stop2 = _interopRequireDefault(_stop);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar App =\n// Poor man's DI\nfunction App() {\n  _classCallCheck(this, App);\n\n  var itineraryMaker = arguments.length <= 0 || arguments[0] === undefined ? new _itineraryMaker2.default() : arguments[0];\n\n  itineraryMaker.add(new _stop2.default({\n    latLng: [30, -45],\n    name: \"Los Angeles\"\n  }));\n};\n\nexports.default = App;"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/moarApp.js",
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/moarApp.js",
+          "moduleName": "./js/moarApp.js",
+          "loc": "",
+          "name": "moar",
           "reasons": []
         }
       ]
@@ -188,17 +401,70 @@
   "modules": [
     {
       "id": 0,
-      "identifier": "multi main",
-      "name": "multi main",
+      "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
+      "name": "./js/anotherApp.js",
       "index": 0,
-      "index2": 3,
-      "size": 28,
+      "index2": 2,
+      "size": 846,
       "cacheable": true,
       "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
         0
+      ],
+      "assets": [],
+      "issuer": null,
+      "profile": {
+        "factory": 23,
+        "building": 1844,
+        "dependencies": 35
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _itineraryMaker = require(\"./itineraryMaker\");\n\nvar _itineraryMaker2 = _interopRequireDefault(_itineraryMaker);\n\nvar _stop = require(\"./stop\");\n\nvar _stop2 = _interopRequireDefault(_stop);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar App =\n// Poor man's DI\nfunction App() {\n  _classCallCheck(this, App);\n\n  var itineraryMaker = arguments.length <= 0 || arguments[0] === undefined ? new _itineraryMaker2.default() : arguments[0];\n\n  itineraryMaker.add(new _stop2.default({\n    latLng: [30, -45],\n    name: \"New York\"\n  }));\n};\n\nexports.default = App;"
+    },
+    {
+      "id": 0,
+      "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
+      "name": "./js/app.js",
+      "index": 3,
+      "index2": 3,
+      "size": 847,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "assets": [],
+      "issuer": null,
+      "profile": {
+        "factory": 1063,
+        "building": 763
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _itineraryMaker = require(\"./itineraryMaker\");\n\nvar _itineraryMaker2 = _interopRequireDefault(_itineraryMaker);\n\nvar _stop = require(\"./stop\");\n\nvar _stop2 = _interopRequireDefault(_stop);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar App =\n// Poor man's DI\nfunction App() {\n  _classCallCheck(this, App);\n\n  var itineraryMaker = arguments.length <= 0 || arguments[0] === undefined ? new _itineraryMaker2.default() : arguments[0];\n\n  itineraryMaker.add(new _stop2.default({\n    latLng: [30, -45],\n    name: \"Nashville\"\n  }));\n};\n\nexports.default = App;"
+    },
+    {
+      "id": 0,
+      "identifier": "multi common",
+      "name": "multi common",
+      "index": 4,
+      "index2": 4,
+      "size": 16,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        2
       ],
       "assets": [],
       "issuer": null,
@@ -212,45 +478,37 @@
       "reasons": []
     },
     {
-      "id": 1,
-      "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
-      "name": "./js/app.js",
-      "index": 1,
-      "index2": 2,
-      "size": 847,
+      "id": 0,
+      "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/moarApp.js",
+      "name": "./js/moarApp.js",
+      "index": 5,
+      "index2": 5,
+      "size": 849,
       "cacheable": true,
       "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [
-        0
+        3
       ],
       "assets": [],
-      "issuer": "multi main",
+      "issuer": null,
       "profile": {
-        "factory": 17,
-        "building": 972
+        "factory": 1064,
+        "building": 821,
+        "dependencies": 12
       },
       "failed": false,
       "errors": 0,
       "warnings": 0,
-      "reasons": [
-        {
-          "moduleId": 0,
-          "moduleIdentifier": "multi main",
-          "module": "multi main",
-          "moduleName": "multi main",
-          "type": "single entry",
-          "userRequest": "./js/app.js"
-        }
-      ],
-      "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _itineraryMaker = require(\"./itineraryMaker\");\n\nvar _itineraryMaker2 = _interopRequireDefault(_itineraryMaker);\n\nvar _stop = require(\"./stop\");\n\nvar _stop2 = _interopRequireDefault(_stop);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar App =\n// Poor man's DI\nfunction App() {\n  _classCallCheck(this, App);\n\n  var itineraryMaker = arguments.length <= 0 || arguments[0] === undefined ? new _itineraryMaker2.default() : arguments[0];\n\n  itineraryMaker.add(new _stop2.default({\n    latLng: [30, -45],\n    name: \"Nashville\"\n  }));\n};\n\nexports.default = App;"
+      "reasons": [],
+      "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _itineraryMaker = require(\"./itineraryMaker\");\n\nvar _itineraryMaker2 = _interopRequireDefault(_itineraryMaker);\n\nvar _stop = require(\"./stop\");\n\nvar _stop2 = _interopRequireDefault(_stop);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar App =\n// Poor man's DI\nfunction App() {\n  _classCallCheck(this, App);\n\n  var itineraryMaker = arguments.length <= 0 || arguments[0] === undefined ? new _itineraryMaker2.default() : arguments[0];\n\n  itineraryMaker.add(new _stop2.default({\n    latLng: [30, -45],\n    name: \"Los Angeles\"\n  }));\n};\n\nexports.default = App;"
     },
     {
-      "id": 2,
+      "id": 1,
       "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/itineraryMaker.js",
       "name": "./js/itineraryMaker.js",
-      "index": 2,
+      "index": 1,
       "index2": 0,
       "size": 1272,
       "cacheable": true,
@@ -258,23 +516,41 @@
       "optional": false,
       "prefetched": false,
       "chunks": [
-        0
+        2
       ],
       "assets": [],
       "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
       "profile": {
-        "factory": 6,
-        "building": 55
+        "factory": 71,
+        "building": 50
       },
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 1,
+          "moduleId": 0,
           "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
           "module": "./js/app.js",
           "moduleName": "./js/app.js",
+          "type": "cjs require",
+          "userRequest": "./itineraryMaker",
+          "loc": "7:22-49"
+        },
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
+          "module": "./js/anotherApp.js",
+          "moduleName": "./js/anotherApp.js",
+          "type": "cjs require",
+          "userRequest": "./itineraryMaker",
+          "loc": "7:22-49"
+        },
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/moarApp.js",
+          "module": "./js/moarApp.js",
+          "moduleName": "./js/moarApp.js",
           "type": "cjs require",
           "userRequest": "./itineraryMaker",
           "loc": "7:22-49"
@@ -283,10 +559,10 @@
       "source": "\"use strict\";\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar ItineraryMaker = function () {\n  function ItineraryMaker() {\n    _classCallCheck(this, ItineraryMaker);\n\n    this.stops = [];\n  }\n\n  _createClass(ItineraryMaker, [{\n    key: \"add\",\n    value: function add(stop) {\n      this.stops.push(stop);\n    }\n  }, {\n    key: \"remove\",\n    value: function remove(stop) {\n      var index = this.stops.indexOf(stop);\n      this.stops.splice(index, 1);\n    }\n  }]);\n\n  return ItineraryMaker;\n}();\n\nexports.default = ItineraryMaker;"
     },
     {
-      "id": 3,
+      "id": 2,
       "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/stop.js",
       "name": "./js/stop.js",
-      "index": 3,
+      "index": 2,
       "index2": 1,
       "size": 232,
       "cacheable": true,
@@ -294,23 +570,41 @@
       "optional": false,
       "prefetched": false,
       "chunks": [
-        0
+        2
       ],
       "assets": [],
       "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
       "profile": {
-        "factory": 6,
-        "building": 61
+        "factory": 72,
+        "building": 58
       },
       "failed": false,
       "errors": 0,
       "warnings": 0,
       "reasons": [
         {
-          "moduleId": 1,
+          "moduleId": 0,
           "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/app.js",
           "module": "./js/app.js",
           "moduleName": "./js/app.js",
+          "type": "cjs require",
+          "userRequest": "./stop",
+          "loc": "11:12-29"
+        },
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/anotherApp.js",
+          "module": "./js/anotherApp.js",
+          "moduleName": "./js/anotherApp.js",
+          "type": "cjs require",
+          "userRequest": "./stop",
+          "loc": "11:12-29"
+        },
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/node_modules/babel-loader/index.js?presets[]=es2015&plugins[]=transform-class-properties!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/web/js/moarApp.js",
+          "module": "./js/moarApp.js",
+          "moduleName": "./js/moarApp.js",
           "type": "cjs require",
           "userRequest": "./stop",
           "loc": "11:12-29"

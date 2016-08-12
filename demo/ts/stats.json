@@ -1,0 +1,327 @@
+{
+  "errors": [
+    "./js/app.ts\n(23,4): error TS2304: Cannot find name 'module'.",
+    "./js/app.ts\n(25,3): error TS2304: Cannot find name 'module'."
+  ],
+  "warnings": [],
+  "version": "1.13.1",
+  "hash": "4eb3f880789f1ee4a076",
+  "time": 998,
+  "publicPath": "/assets/",
+  "assetsByChunkName": {
+    "main": "bundle.js"
+  },
+  "assets": [
+    {
+      "name": "bundle.js",
+      "size": 3211,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "emitted": true
+    }
+  ],
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 1550,
+      "names": [
+        "main"
+      ],
+      "files": [
+        "bundle.js"
+      ],
+      "hash": "0a7e2f134d8d1b1b4e6b",
+      "parents": [],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "multi main",
+          "name": "multi main",
+          "index": 0,
+          "index2": 3,
+          "size": 28,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": null,
+          "profile": {
+            "factory": 0,
+            "building": 1
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": []
+        },
+        {
+          "id": 1,
+          "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/node_modules/ts-loader/index.js!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/js/app.ts",
+          "name": "./js/app.ts",
+          "index": 1,
+          "index2": 2,
+          "size": 758,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "multi main",
+          "profile": {
+            "factory": 19,
+            "building": 528
+          },
+          "failed": false,
+          "errors": 2,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "multi main",
+              "module": "multi main",
+              "moduleName": "multi main",
+              "type": "single entry",
+              "userRequest": "./js/app.ts"
+            }
+          ],
+          "source": "\"use strict\";\nvar itineraryMaker_1 = require(\"./itineraryMaker\");\nvar stop_1 = require(\"./stop\");\nvar App = (function () {\n    // Poor man's DI\n    function App(itineraryMaker) {\n        if (itineraryMaker === void 0) { itineraryMaker = new itineraryMaker_1.default(); }\n        var stop = new stop_1.default({\n            latLng: [30, -45],\n            name: \"Nashville\"\n        });\n        itineraryMaker.add(stop);\n        console.log(itineraryMaker.stops);\n    }\n    return App;\n}());\nvar app = new App();\nvar div = document.createElement(\"div\");\ndiv.innerHTML = \"Itinerary Maker\";\ndocument.body.appendChild(div);\nif (module.hot) {\n    // accept update of dependency\n    module.hot.accept(\"./app.ts\", function () {\n        var app = new App();\n    });\n}\n"
+        },
+        {
+          "id": 2,
+          "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/node_modules/ts-loader/index.js!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/js/itineraryMaker.ts",
+          "name": "./js/itineraryMaker.ts",
+          "index": 2,
+          "index2": 0,
+          "size": 480,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/node_modules/ts-loader/index.js!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/js/app.ts",
+          "profile": {
+            "factory": 8,
+            "building": 13
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 1,
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/node_modules/ts-loader/index.js!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/js/app.ts",
+              "module": "./js/app.ts",
+              "moduleName": "./js/app.ts",
+              "type": "cjs require",
+              "userRequest": "./itineraryMaker",
+              "loc": "2:23-50"
+            }
+          ],
+          "source": "\"use strict\";\nvar ItineraryMaker = (function () {\n    function ItineraryMaker() {\n        this.stops = [];\n    }\n    ItineraryMaker.prototype.add = function (stop) {\n        this.stops.push(stop);\n    };\n    ItineraryMaker.prototype.remove = function (stop) {\n        var index = this.stops.indexOf(stop);\n        this.stops.splice(index, 1);\n    };\n    return ItineraryMaker;\n}());\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.default = ItineraryMaker;\n"
+        },
+        {
+          "id": 3,
+          "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/node_modules/ts-loader/index.js!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/js/stop.ts",
+          "name": "./js/stop.ts",
+          "index": 3,
+          "index2": 1,
+          "size": 284,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/node_modules/ts-loader/index.js!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/js/app.ts",
+          "profile": {
+            "factory": 9,
+            "building": 18
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 1,
+              "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/node_modules/ts-loader/index.js!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/js/app.ts",
+              "module": "./js/app.ts",
+              "moduleName": "./js/app.ts",
+              "type": "cjs require",
+              "userRequest": "./stop",
+              "loc": "3:13-30"
+            }
+          ],
+          "source": "\"use strict\";\nvar Stop = (function () {\n    function Stop(_a) {\n        var latLng = _a.latLng, name = _a.name;\n        this.latLng = latLng;\n        this.name = name;\n    }\n    return Stop;\n}());\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.default = Stop;\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "multi main",
+          "moduleIdentifier": "multi main",
+          "moduleName": "multi main",
+          "loc": "",
+          "name": "main",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "multi main",
+      "name": "multi main",
+      "index": 0,
+      "index2": 3,
+      "size": 28,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": null,
+      "profile": {
+        "factory": 0,
+        "building": 1
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": []
+    },
+    {
+      "id": 1,
+      "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/node_modules/ts-loader/index.js!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/js/app.ts",
+      "name": "./js/app.ts",
+      "index": 1,
+      "index2": 2,
+      "size": 758,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "multi main",
+      "profile": {
+        "factory": 19,
+        "building": 528
+      },
+      "failed": false,
+      "errors": 2,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "multi main",
+          "module": "multi main",
+          "moduleName": "multi main",
+          "type": "single entry",
+          "userRequest": "./js/app.ts"
+        }
+      ],
+      "source": "\"use strict\";\nvar itineraryMaker_1 = require(\"./itineraryMaker\");\nvar stop_1 = require(\"./stop\");\nvar App = (function () {\n    // Poor man's DI\n    function App(itineraryMaker) {\n        if (itineraryMaker === void 0) { itineraryMaker = new itineraryMaker_1.default(); }\n        var stop = new stop_1.default({\n            latLng: [30, -45],\n            name: \"Nashville\"\n        });\n        itineraryMaker.add(stop);\n        console.log(itineraryMaker.stops);\n    }\n    return App;\n}());\nvar app = new App();\nvar div = document.createElement(\"div\");\ndiv.innerHTML = \"Itinerary Maker\";\ndocument.body.appendChild(div);\nif (module.hot) {\n    // accept update of dependency\n    module.hot.accept(\"./app.ts\", function () {\n        var app = new App();\n    });\n}\n"
+    },
+    {
+      "id": 2,
+      "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/node_modules/ts-loader/index.js!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/js/itineraryMaker.ts",
+      "name": "./js/itineraryMaker.ts",
+      "index": 2,
+      "index2": 0,
+      "size": 480,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/node_modules/ts-loader/index.js!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/js/app.ts",
+      "profile": {
+        "factory": 8,
+        "building": 13
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 1,
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/node_modules/ts-loader/index.js!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/js/app.ts",
+          "module": "./js/app.ts",
+          "moduleName": "./js/app.ts",
+          "type": "cjs require",
+          "userRequest": "./itineraryMaker",
+          "loc": "2:23-50"
+        }
+      ],
+      "source": "\"use strict\";\nvar ItineraryMaker = (function () {\n    function ItineraryMaker() {\n        this.stops = [];\n    }\n    ItineraryMaker.prototype.add = function (stop) {\n        this.stops.push(stop);\n    };\n    ItineraryMaker.prototype.remove = function (stop) {\n        var index = this.stops.indexOf(stop);\n        this.stops.splice(index, 1);\n    };\n    return ItineraryMaker;\n}());\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.default = ItineraryMaker;\n"
+    },
+    {
+      "id": 3,
+      "identifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/node_modules/ts-loader/index.js!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/js/stop.ts",
+      "name": "./js/stop.ts",
+      "index": 3,
+      "index2": 1,
+      "size": 284,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/node_modules/ts-loader/index.js!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/js/app.ts",
+      "profile": {
+        "factory": 9,
+        "building": 18
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 1,
+          "moduleIdentifier": "/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/node_modules/ts-loader/index.js!/Users/jonathanc/Projects/jcreamer898/advanced-webpack/demo/ts/js/app.ts",
+          "module": "./js/app.ts",
+          "moduleName": "./js/app.ts",
+          "type": "cjs require",
+          "userRequest": "./stop",
+          "loc": "3:13-30"
+        }
+      ],
+      "source": "\"use strict\";\nvar Stop = (function () {\n    function Stop(_a) {\n        var latLng = _a.latLng, name = _a.name;\n        this.latLng = latLng;\n        this.name = name;\n    }\n    return Stop;\n}());\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.default = Stop;\n"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}

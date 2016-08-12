@@ -849,6 +849,12 @@ plugins: [
 * Pass an instance 
 
 ---
+class: center, middle
+### WebPack 2
+
+![](images/brace.jpg)
+
+---
 
 ### WebPack 2
 * Native ES6 module support
@@ -856,8 +862,9 @@ plugins: [
 * Tree shaking
 * Performance enhancements
 * [More...](https://webpack.github.io/docs/roadmap.html)
+* https://gist.github.com/sokra/27b24881210b56bbaff7
 
-??? 
+???
 
 Tree shaking removes unused exports
 

@@ -10,6 +10,7 @@ class App {
     });
 
     itineraryMaker.add(stop);
+    console.log(itineraryMaker.stops);
   }
 }
 
