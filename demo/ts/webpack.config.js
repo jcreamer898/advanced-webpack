@@ -2,6 +2,7 @@ module.exports = {
   entry: ["./js/app.ts"],
   output: {
     path: "./dist",
+    publicPath: "/assets/",
     filename: "bundle.js"
   },
   resolve: {

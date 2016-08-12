@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/assets/";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -66,8 +66,10 @@
 	    }
 	    return App;
 	}());
-	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.default = App;
+	var app = new App();
+	var div = document.createElement("div");
+	div.innerHTML = "Itinerary Maker";
+	document.body.appendChild(div);
 
 
 /***/ },
@@ -77,6 +79,7 @@
 	"use strict";
 	var ItineraryMaker = (function () {
 	    function ItineraryMaker() {
+	        this.stops = [];
 	    }
 	    ItineraryMaker.prototype.add = function (stop) {
 	        this.stops.push(stop);

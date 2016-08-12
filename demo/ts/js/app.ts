@@ -1,7 +1,7 @@
 import ItineraryMaker from "./itineraryMaker";
 import Stop from "./stop";
 
-export default class App {
+class App {
   // Poor man's DI
   constructor(itineraryMaker = new ItineraryMaker()) {
     const stop = new Stop({
@@ -12,3 +12,9 @@ export default class App {
     itineraryMaker.add(stop);
   }
 }
+
+const app = new App();
+
+const div = document.createElement("div");
+div.innerHTML = "Itinerary Maker";
+document.body.appendChild(div);

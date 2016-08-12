@@ -23,7 +23,7 @@ class: center, middle
 <img src="images/lonelyplanet_bw.png" style="width: 10em" />
 
 * Love JavaScript, tweet at [@jcreamer898](http://twitter.com/jcreamer898), blog at [jonathancreamer.com](http://jonathancreamer.com)
-* [Microsoft IE MVP](https://mvp.microsoft.com/en-us/MyProfile/Preview?previewAs=Public), [Telerik Developer Expert](http://developer.telerik.com/community/developer-experts/)
+* [Microsoft MVP](https://mvp.microsoft.com/en-us/MyProfile/Preview?previewAs=Public)
 
 ???
 
@@ -56,12 +56,14 @@ class: center, middle
 
 ### When I looked at the WebPack API for the first time...
 
+--
+
 ![](images/confused.gif)
 
 
 ---
 
-# Run WebPack with the CLI
+# Basics
 
 ```js
 module.exports = {
@@ -83,8 +85,28 @@ npm install -g webpack babel-loader babel-preset-es2015
 webpack --progress
 ```
 
-* `webpack.config.js`
+* Looks for `webpack.config.js` by default
 * Use progress to show output info
+
+???
+
+Uses entry to figure out what to put into the bundles
+Figures out which loaders to use by file extension
+Sifferent than grunt or gulp
+
+---
+
+#### Install the CLI
+
+```shell
+npm install webpack --save-dev
+
+# OR
+
+npm install webpack -g
+```
+
+* Install globally, or locally
 
 ---
 
@@ -92,7 +114,11 @@ webpack --progress
 
 ![](images/hidden-modules.png)
 
+* webpack --progress
 * Modules hidden by default
+
+???
+* --colors and webpack.config.js are defaults
 
 ---
 
@@ -120,7 +146,8 @@ webpack --progress
 ---
 ### Useful CLI options
 
-* `--output-library-target target` maps to configuration options `output.libraryTarget`
+* `--output-library-target target` maps to webpack.config options 
+  * aka `output.libraryTarget`
 * Can map any config
 
 ---
@@ -130,6 +157,37 @@ webpack --progress
 * `--watch` to recompile assets when source files change
 * `-p` alias for `--optimize-minimize --optimize-occurence-order`
 
+---
+
+### WebPack Dev Server
+
+```shell
+npm install webpack-dev-server -g
+webpack-dev-server --progress --colors --hot --inline
+```
+
+* Hosts assets at localhost:8080
+* Uses socketjs to refresh browser
+* Uses Hot Module Replacement
+* Add to webpack.config... publicPath: "/assets/"
+
+---
+
+### Use w/ NPM to replace grunt
+
+```js
+{
+  "scripts": {
+    "dev": "webpack --watch --progress --config webpack.dev",
+    "build": "webpack --config webpack.prod",
+    "watch": "webpack-dev-server --progress --hot --inline"
+  }
+}
+```
+
+* `npm run dev` for local
+* `npm run build` on production
+* `npm run watch` for ci with dev server
 
 ---
 
@@ -207,7 +265,7 @@ exclude: true
 
 ```js
 entry: {
-  common: ["jquery"],
+  common: ["jquery", "babel-polyfill"],
   /* ... */
 },
 plugins: [new webpack.optimize.CommonsChunkPlugin({
@@ -315,7 +373,6 @@ loaders: [{
   loader: ExtractTextPlugin.extract(
     "style-loader",
     "css-loader!" +
-    "autoprefixer-loader?browsers=last 3 version" +
     "!sass-loader?outputStyle=expanded&" +
     "includePaths[]=" + path.resolve(__dirname, "./node_modules"))
 },
@@ -545,7 +602,7 @@ module: {
     loader: "babel?presets[]=es2015,stage-2"
   }, {
     test: /\.ts$/,
-    loader: "typescript"
+    loader: "ts"
   }, {
     test: /\.coffee$/,
     loader: "coffee"
@@ -582,6 +639,9 @@ exclude: true
 ```js
 @component
 class MyComponent() {
+  // class properties
+  foo = "bar";
+
   @readonly
   get alerts() {
     return [/*...*/];
@@ -596,6 +656,7 @@ class MyComponent() {
 * Decorators allow you to wrap methods
 * Use now and test w/ `stage-2`
 * Great for the TC39
+* `babel-plugin-transform-class-properties`
 
 ---
 class: center, middle
@@ -693,14 +754,14 @@ export default class Logger {
   error(err) {
     console.error(err);
 
-    if (proccess.env.) {
+    if (proccess.env.NODE_ENV === "production") {
       airbrake.notify(err);
     }
   }
 }
 ```
 
-* Minified
+* Removed when minified
 
 ---
 
@@ -714,22 +775,7 @@ const provide = new webpack.ProvidePlugin({
 ```
 
 * Inject dependencies into every module
-
----
-
-### Use w/ NPM to replace grunt
-
-```js
-{
-  "scripts": {
-    "dev": "webpack --watch --progress --config webpack.dev",
-    "build": "webpack --config webpack.prod",
-  }
-}
-```
-
-* `npm run dev` for local
-* `npm run build` on production
+* No need to import $ everywhere
 
 ---
 ### Inject Loader
@@ -760,11 +806,65 @@ let LoginManager = Injector({
 
 ---
 
-### Create a plugin
+### Create a custom plugin
+
+```js
+class Notifier {
+  apply(compiler) {
+    compiler.plugin("done", (stats) => {
+      const pkg = require("../package.json");
+      const notifier = require("node-notifier");
+      const time = ((stats.endTime - stats.startTime) / 1000).toFixed(2);
+
+      notifier.notify({
+        title: pkg.name,
+        message: `WebPack is done!\n${stats.compilation.errors.length} errors in ${time}s`,
+        contentImage: "https://pbs.twimg.com/profile_images/634838765819662336/5PLMpxMI.png",
+      });
+    });
+  }
+}
+
+module.exports = Notifier;
+```
+
+* Needs an `apply` API
+* Many different events you can hook into
 
 ---
 
-### React Hot Module Replacement
+### Create a custom plugin
+
+```js
+const Notifier = require("webpack/notifier");
+
+//...
+
+plugins: [
+  new Notifier()
+  // ...
+];
+```
+
+* Pass an instance 
+
+---
+
+### WebPack 2
+* Native ES6 module support
+* System.js for chunk loading
+* Tree shaking
+* Performance enhancements
+* [More...](https://webpack.github.io/docs/roadmap.html)
+
+??? 
+
+Tree shaking removes unused exports
+
+---
+class: center,middle
+
+# Demos
 
 ---
 

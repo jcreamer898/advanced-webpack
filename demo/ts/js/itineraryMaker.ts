@@ -2,6 +2,10 @@ import { IStop, IItineraryMaker } from "../typings/index.d.ts";
 
 export default class ItineraryMaker implements IItineraryMaker{
   stops: Array<IStop>;
+  
+  constructor() {
+    this.stops = [];
+  }
 
   add(stop: IStop) {
     this.stops.push(stop);
