@@ -60,6 +60,10 @@ class: center, middle
 
 ![](images/confused.gif)
 
+???
+
+Jim told me about it  
+Strange, but doable
 
 ---
 
@@ -81,7 +85,7 @@ module.exports = {
 };
 ```
 ```shell
-npm install -g webpack babel-loader babel-preset-es2015
+npm install --save-dev webpack babel-loader babel-preset-es2015
 webpack --progress
 ```
 
@@ -90,23 +94,9 @@ webpack --progress
 
 ???
 
-Uses entry to figure out what to put into the bundles
-Figures out which loaders to use by file extension
-Sifferent than grunt or gulp
-
----
-
-#### Install the CLI
-
-```shell
-npm install webpack --save-dev
-
-# OR
-
-npm install webpack -g
-```
-
-* Install globally, or locally
+Uses entry to figure out what to put into the bundles  
+Figures out which loaders to use by file extension  
+Different than grunt or gulp  
 
 ---
 
@@ -348,7 +338,7 @@ class: center, middle
 
 ### When you expect your CSS to load, but you have a flash of unstyled content...
 
-![](images/cssnotpretty.gif)
+![](images/css.gif)
 
 ---
 
@@ -552,7 +542,7 @@ Allows you to write in any format and output AMD still if needed
 
 ```js
 output: {
-  libraryTarget: "commonjs2"
+  libraryTarget: "commonjs"
 },
 target: "node"
 ```
@@ -577,7 +567,7 @@ export default class Logger {
 }
 ```
 
-* Will export as `module.exports = Logger;`
+* Will export as module.exports = Logger;
 
 ---
 class: center, middle
@@ -866,19 +856,20 @@ class: center, middle
 
 ???
 
-ES6 works in webpack 1 only w/ babel
-Tree shaking removes unused exports
-Didn't know what tree shaking was so like everyone else I googled it with giphy
+ES6 works in webpack 1 only w/ babel  
+Tree shaking removes unused exports  
+Didn't know what tree shaking was so like everyone else I googled it with giphy  
 
---- 
+---
 class: center, middle
-### I googled it
+
+### So, I googled it...
 
 --
 
-### with giphy
+### ...with giphy
 
-![](images/giphytree.png)
+<img src="images/giphytree.png" width="80%" />
 
 ---
 class: center, middle
@@ -886,6 +877,11 @@ class: center, middle
 ### Tree shaking
 
 ![](images/treeshaking.gif)
+
+???
+
+That's not it...
+Turns out it's...
 
 ---
 
@@ -905,6 +901,7 @@ import { myOtherFunction } from "./functions";
 ```
 
 * Will exclude myFunction from output w/ minification
+* Static analysis of ES6 modules
 
 ---
 class: center,middle
