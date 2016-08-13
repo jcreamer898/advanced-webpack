@@ -32,6 +32,11 @@ class: center, middle
 
 # WebPack
 
+???
+
+How many people are using webpack?
+What about grunt? Gulp? JSPM?
+
 ---
 
 # WebPack
@@ -925,7 +930,9 @@ class: center,middle
 ---
 class: center, middle
 
-# Thanks
+# Thanks!
+
+![](images/balmer.gif)
 
 ### [@jcreamer898](http://twitter.com/jcreamer898)
 ### [jonathancreamer.com](http://jonathancreamer.com)
