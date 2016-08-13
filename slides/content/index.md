@@ -522,7 +522,7 @@ class: center, middle
 
 ```js
 output: {
-  libraryTarget: "amd"
+  libraryTarget: "amd",
 }
 ```
 
@@ -542,15 +542,16 @@ Allows you to write in any format and output AMD still if needed
 
 ```js
 output: {
-  libraryTarget: "commonjs"
+  libraryTarget: "commonjs",
+  library: "MyAwesomeLogger"
 },
 target: "node"
 ```
 
-
 * Support all ES features
 * Not all versions of node support ES2015
 * Just stop when you can upgrade
+* Library exports as a name
 
 ---
 

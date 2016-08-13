@@ -8,7 +8,6 @@ module.exports = {
     path: "./dist",
     libraryTarget: "commonjs",
     library: "MyAwesomeLogger",
-    umdNamedDefine: true,
     filename: "index.js"
   },
   target: "node",
